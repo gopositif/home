@@ -153,58 +153,33 @@
         ::-webkit-scrollbar-thumb { background: #C5D1AA; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #7C9246; }
 
-        /* EFEK 3D CEMBUNG & KILAU CEKUNGAN KRISTAL */
-        .crystal-3d-sphere {
-            position: relative;
-            border-radius: 50%;
-            box-shadow: 
-                0 12px 25px rgba(0, 0, 0, 0.6),
-                inset -6px -8px 18px rgba(0, 0, 0, 0.65),
-                inset 6px 8px 20px rgba(255, 255, 255, 0.6),
-                0 0 25px rgba(243, 169, 75, 0.4);
-            border: 2.5px solid rgba(255, 255, 255, 0.7);
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
-            backdrop-filter: blur(4px);
-        }
-
-        .crystal-3d-sphere::before {
-            content: "";
+        /* AREA SENTUH NATURAL & EFEK KILAU SIKLUS */
+        .natural-touch-hotspot {
             position: absolute;
-            top: 5%;
-            left: 12%;
-            width: 76%;
-            height: 44%;
             border-radius: 50%;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 80%);
-            pointer-events: none;
-            z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: rgba(255, 255, 255, 0);
         }
 
-        .crystal-3d-sphere::after {
-            content: "";
-            position: absolute;
-            bottom: 3%;
-            right: 12%;
-            width: 55%;
-            height: 25%;
-            border-radius: 50%;
-            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 75%);
-            pointer-events: none;
-            z-index: 2;
+        .natural-touch-hotspot:hover {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(243, 169, 75, 0.25) 50%, rgba(255, 255, 255, 0) 75%);
+            box-shadow: 0 0 30px rgba(243, 169, 75, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.6);
+            transform: translate(-50%, -50%) scale(1.12);
         }
 
-        .leaf-node {
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        /* EFEK KILAU BENIH */
+        .seed-pulse-glow {
+            animation: pulseGlow 2s infinite alternate;
         }
-        .leaf-node:hover .crystal-3d-sphere {
-            transform: scale(1.12);
-            box-shadow: 
-                0 18px 35px rgba(0, 0, 0, 0.75),
-                inset -6px -8px 20px rgba(0, 0, 0, 0.7),
-                inset 8px 10px 24px rgba(255, 255, 255, 0.85),
-                0 0 35px rgba(243, 169, 75, 0.95);
-            border-color: #FFFFFF;
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: inset 0 0 10px rgba(243, 169, 75, 0.2), 0 0 15px rgba(243, 169, 75, 0.3);
+            }
+            100% {
+                box-shadow: inset 0 0 25px rgba(243, 169, 75, 0.6), 0 0 35px rgba(243, 169, 75, 0.8);
+            }
         }
     </style>
 </head>
@@ -610,7 +585,7 @@
             </div>
         </section>
 
-        <!-- TAB CONTENT LAYANAN (DENGAN EFEK VIDEO TUMBUH ALAMI & HOTSPOT INTERAKTIF) -->
+        <!-- TAB CONTENT LAYANAN (DENGAN ANIMASI BENIH NATURAL & AREA SENTUH TERSEMBUNYI) -->
         <section id="content-layanan" class="hidden space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-soft-green text-deep-green border border-olive-green/30">
@@ -618,7 +593,7 @@
                 </span>
                 <h2 class="text-2xl md:text-3xl font-black text-deep-green">Klaster Layanan Utama GO-Positif</h2>
                 <p class="text-xs md:text-sm text-earth-brown font-medium">
-                    Layanan kesehatan berbasis model 5 Klaster Siklus Hidup terintegrasi—disajikan melalui animasi benih tumbuh alami dan <span class="font-bold text-olive-green">Pohon Layanan Posyandu 3D</span> untuk kemudahan warga Desa Gonoharjo.
+                    Layanan kesehatan berbasis model 5 Klaster Siklus Hidup terintegrasi—disajikan secara alami melalui sentuhan langsung pada benih dan gambar siklus kehidupan.
                 </p>
             </div>
 
@@ -674,11 +649,11 @@
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-olive-green/20 shadow-sm">
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 rounded-xl bg-soft-green text-deep-green flex items-center justify-center font-bold text-lg">
-                            <i class="fa-solid fa-tree text-olive-green"></i>
+                            <i class="fa-solid fa-seedling text-olive-green"></i>
                         </div>
                         <div>
-                            <h3 class="font-extrabold text-deep-green text-sm md:text-base">Animasi Pertumbuhan & Pohon Layanan Posyandu</h3>
-                            <p class="text-xs text-earth-brown font-medium">Klik tombol putar untuk menyaksikan benih tumbuh menjadi pohon layanan, lalu klik pada klaster layanan untuk melihat detail.</p>
+                            <h3 class="font-extrabold text-deep-green text-sm md:text-base">Pohon Layanan Posyandu GO-Positif</h3>
+                            <p class="text-xs text-earth-brown font-medium">Sentuh benih di bawah untuk menyiram dan menumbuhkannya menjadi pohon layanan, lalu sentuh langsung ikon siklus di pohon.</p>
                         </div>
                     </div>
                     <button onclick="resetToStart()" class="btn-brown px-4 py-2 text-xs font-bold flex items-center space-x-2 shadow-md hover:scale-105 transition-all">
@@ -687,54 +662,42 @@
                     </button>
                 </div>
 
-                <!-- VIEWPORT UTAMA (VIDEO & POHON AKHIR) -->
+                <!-- VIEWPORT UTAMA (VIDEO & POHON AKHIR DENGAN HOTSPOT TANPA TOMBOL) -->
                 <div id="pohon-viewport" class="relative w-full h-[580px] sm:h-[650px] md:h-[700px] rounded-3xl overflow-hidden shadow-2xl border-2 border-olive-green/30 bg-stone-900 select-none">
                     
-                    <!-- 1. KONTAINER VIDEO BENIH TUMBUH -->
+                    <!-- 1. KONTAINER VIDEO BENIH TUMBUH (DENGAN AUTOPLAY DAN KELANCARAN PEMUTARAN) -->
                     <div id="video-container" class="absolute inset-0 w-full h-full z-20 transition-opacity duration-700">
-                        <video id="seed-video" class="w-full h-full object-cover" playsinline muted preload="auto" poster="https://lh3.googleusercontent.com/d/13vtHvGiq3BzxGqiZcsf5F5blvvBjAKEO" onended="onSeedVideoEnded()">
+                        <video id="seed-video" class="w-full h-full object-cover" playsinline muted autoplay loop preload="auto" poster="https://lh3.googleusercontent.com/d/13vtHvGiq3BzxGqiZcsf5F5blvvBjAKEO" onended="onSeedVideoEnded()">
+                            <source src="./videos/Benih%20layanan.mp4" type="video/mp4">
                             <source src="videos/Benih%20layanan.mp4" type="video/mp4">
-                            Pesan: Browser Anda tidak mendukung pemutaran video.
                         </video>
                         
-                        <!-- TOMBOL OVERLAY KLIK AWAL -->
-                        <div id="play-overlay" class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] cursor-pointer group" onclick="playSeedVideo()">
-                            <div class="w-24 h-24 rounded-full bg-olive-green/90 text-sun-yellow border-4 border-white/90 shadow-2xl flex items-center justify-center group-hover:scale-110 group-hover:bg-deep-green transition duration-300">
-                                <i class="fa-solid fa-seedling text-4xl ml-0.5"></i>
-                            </div>
-                            <div class="mt-4 bg-black/75 backdrop-blur-md px-5 py-2.5 rounded-full text-white text-xs sm:text-sm font-bold border border-sun-yellow/50 shadow-xl flex items-center space-x-2">
-                                <i class="fa-solid fa-hand-pointer text-sun-yellow animate-bounce"></i>
-                               <span>Klik untuk Saksikan Benih Tumbuh Menjadi Pohon Layanan</span>
+                        <!-- SENTUHAN NATURAL DI ATAS BENIH (TANPA TOMBOL VISUAL) -->
+                        <div id="play-overlay" class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer group" onclick="playSeedVideo()">
+                            <!-- Area Cincin Sentuh Cahaya di Sekitar Benih -->
+                            <div class="w-52 h-52 sm:w-64 sm:h-64 rounded-full seed-pulse-glow flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity bg-black/60 backdrop-blur-xs text-amber-200 text-xs px-4 py-2 rounded-full border border-sun-yellow/40 font-bold shadow-lg">
+                                    ✨ Sentuh Benih untuk Menumbuhkan Pohon
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. GAMBAR AKHIR / POHON DEWASA & HOTSPOT LAYANAN (MUNCUL OTOMATIS SETELAH VIDEO SELESAI) -->
+                    <!-- 2. GAMBAR AKHIR / POHON DEWASA & HOTSPOT NATURAL TANPA TOMBOL -->
                     <div id="img-end" class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-700 ease-in-out origin-center z-10 opacity-0 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/d/1uhO7tYKrqHo0_xl0mK4H-IcdG0GhlbW_');">
                         
-                        <!-- BAR KONTROL ATAS DALAM VIEWPORT -->
                         <div class="absolute top-4 left-4 right-4 z-40 flex justify-between items-center pointer-events-none">
                             <span class="bg-black/60 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/20 font-bold shadow-md">
-                                🌳 Selesai Tumbuh: Pilih Klaster Layanan Posyandu ILP
+                                🌳 Pohon Siklus Hidup: Sentuh Gambar Siklus Layanan
                             </span>
                         </div>
 
-                        <!-- 5 HOTSPOT TOMBOL KLIK LAYANAN DI ATAS POHON -->
-                        <div onclick="zoomToLayanan(1)" class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full cursor-pointer border-2 border-dashed border-white/60 bg-white/10 hover:bg-white/25 hover:scale-110 transition duration-300 flex items-center justify-center shadow-lg pointer-events-auto" style="left: 18%; top: 58%; transform: translate(-50%, -50%);" title="1. Balita & Baduta">
-                            <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow">Balita</span>
-                        </div>
-                        <div onclick="zoomToLayanan(2)" class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full cursor-pointer border-2 border-dashed border-white/60 bg-white/10 hover:bg-white/25 hover:scale-110 transition duration-300 flex items-center justify-center shadow-lg pointer-events-auto" style="left: 33%; top: 28%; transform: translate(-50%, -50%);" title="2. Posyandu Remaja">
-                            <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow">Remaja</span>
-                        </div>
-                        <div onclick="zoomToLayanan(3)" class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full cursor-pointer border-2 border-dashed border-white/60 bg-white/10 hover:bg-white/25 hover:scale-110 transition duration-300 flex items-center justify-center shadow-lg pointer-events-auto" style="left: 50%; top: 24%; transform: translate(-50%, -50%);" title="3. Ibu Hamil & Menyusui">
-                            <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow">Bumil</span>
-                        </div>
-                        <div onclick="zoomToLayanan(4)" class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full cursor-pointer border-2 border-dashed border-white/60 bg-white/10 hover:bg-white/25 hover:scale-110 transition duration-300 flex items-center justify-center shadow-lg pointer-events-auto" style="left: 67%; top: 28%; transform: translate(-50%, -50%);" title="4. Usia Produktif">
-                            <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow">Produktif</span>
-                        </div>
-                        <div onclick="zoomToLayanan(5)" class="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full cursor-pointer border-2 border-dashed border-white/60 bg-white/10 hover:bg-white/25 hover:scale-110 transition duration-300 flex items-center justify-center shadow-lg pointer-events-auto" style="left: 82%; top: 58%; transform: translate(-50%, -50%);" title="5. Lansia & PTM">
-                            <span class="bg-black/80 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow">Lansia</span>
-                        </div>
+                        <!-- 5 HOTSPOT NATURAL (TANPA BORDER/TOMBOL, HANYA AREA SENTUH NATURAL BER-EFEK SIKLUS) -->
+                        <div onclick="zoomToLayanan(1)" class="natural-touch-hotspot w-28 h-28 sm:w-36 sm:h-36 pointer-events-auto" style="left: 31%; top: 52%; transform: translate(-50%, -50%);" title="1. Balita & Baduta"></div>
+                        <div onclick="zoomToLayanan(2)" class="natural-touch-hotspot w-28 h-28 sm:w-36 sm:h-36 pointer-events-auto" style="left: 40%; top: 32%; transform: translate(-50%, -50%);" title="2. Posyandu Remaja"></div>
+                        <div onclick="zoomToLayanan(3)" class="natural-touch-hotspot w-28 h-28 sm:w-36 sm:h-36 pointer-events-auto" style="left: 50%; top: 21%; transform: translate(-50%, -50%);" title="3. Ibu Hamil & Menyusui"></div>
+                        <div onclick="zoomToLayanan(4)" class="natural-touch-hotspot w-28 h-28 sm:w-36 sm:h-36 pointer-events-auto" style="left: 60%; top: 32%; transform: translate(-50%, -50%);" title="4. Usia Produktif"></div>
+                        <div onclick="zoomToLayanan(5)" class="natural-touch-hotspot w-28 h-28 sm:w-36 sm:h-36 pointer-events-auto" style="left: 69%; top: 52%; transform: translate(-50%, -50%);" title="5. Lansia & PTM"></div>
 
                     </div>
 
@@ -1124,7 +1087,7 @@
                 title: "1. Posyandu Balita & Baduta",
                 badge: "KLASTER 1",
                 icon: "fa-baby",
-                zoom: { scale: 2.1, x: 30, y: 12 },
+                zoom: { scale: 2.1, x: 28, y: -12 },
                 desc: "Pendampingan rutin tumbuh kembang bayi (0-23 bulan) dan balita (24-59 bulan), penimbangan, pengukuran tinggi badan, imunisasi lengkap, Vitamin A, serta pemberian makanan bergizi lokal.",
                 req: "1. Membawa Buku KIA (Pink)<br>2. Fotokopi KK / KTP Orang Tua<br>3. Membawa Kartu Berobat / BPJS (jika ada)"
             },
@@ -1132,7 +1095,7 @@
                 title: "2. Posyandu Remaja",
                 badge: "KLASTER 2",
                 icon: "fa-user-graduate",
-                zoom: { scale: 2.1, x: 15, y: 22 },
+                zoom: { scale: 2.1, x: 16, y: 18 },
                 desc: "Layanan kesehatan ramah remaja (10-18 tahun), mencakup pemeriksaan anemia (kadar Hb), edukasi gizi seimbang, kesehatan reproduksi, serta ruang konseling kesehatan mental.",
                 req: "1. Usia 10 - 18 Tahun Warga Desa Gonoharjo<br>2. Membawa Kartu Identitas / Kartu Pelajar"
             },
@@ -1140,15 +1103,15 @@
                 title: "3. Ibu Hamil & Menyusui",
                 badge: "KLASTER 3",
                 icon: "fa-person-pregnant",
-                zoom: { scale: 2.1, x: 0, y: 28 },
+                zoom: { scale: 2.1, x: 0, y: 20 },
                 desc: "Pemantauan kesehatan fisik & emosional ibu hamil, penimbangan BB, pengukuran LILA, pembagian Tablet Tambah Darah (TTD), serta edukasi persiapan ASI Eksklusif.",
                 req: "1. Buku KIA (Pink)<br>2. KTP / KK Suami Istri"
             },
             4: {
-                title: "4. Posyandu Usia Produktif",
+                title: "4. Usia Produktif",
                 badge: "KLASTER 4",
                 icon: "fa-users-between-lines",
-                zoom: { scale: 2.1, x: -15, y: 22 },
+                zoom: { scale: 2.1, x: -16, y: 18 },
                 desc: "Skrining kesehatan berkala warga usia 15-59 tahun untuk pencegahan Penyakit Tidak Menular (PTM) meliputi pemeriksaan tensi darah, gula darah, serta konseling gaya hidup sehat.",
                 req: "1. Warga Usia 15 - 59 Tahun<br>2. Membawa KTP / NIK"
             },
@@ -1156,7 +1119,7 @@
                 title: "5. Posyandu Lansia & PTM",
                 badge: "KLASTER 5",
                 icon: "fa-person-cane",
-                zoom: { scale: 2.1, x: -30, y: 12 },
+                zoom: { scale: 2.1, x: -28, y: -12 },
                 desc: "Pemeriksaan kesehatan berkala lansia (60+ tahun), pemantauan tekanan darah, kolesterol, asam urat, senam kebugaran lansia, dan pendampingan kesehatan emosional.",
                 req: "1. Warga Usia 60 Tahun ke Atas<br>2. Membawa KTP / Kartu Berobat Lansia"
             }
@@ -1169,6 +1132,10 @@
             document.getElementById('content-' + tabName).classList.remove('hidden');
             document.getElementById('tab-' + tabName).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if(tabName === 'layanan') {
+                playSeedVideo();
+            }
         }
 
         // Fungsi Memutar Video Benih Tumbuh
@@ -1176,12 +1143,20 @@
             const video = document.getElementById('seed-video');
             const overlay = document.getElementById('play-overlay');
             
-            overlay.style.opacity = '0';
-            setTimeout(() => overlay.classList.add('hidden'), 300);
-            
-            video.play().catch(error => {
-                console.log("Gagal memutar video secara otomatis:", error);
-            });
+            if(video) {
+                video.muted = true;
+                const promise = video.play();
+                if (promise !== undefined) {
+                    promise.then(() => {
+                        if(overlay) {
+                            overlay.style.opacity = '0';
+                            setTimeout(() => overlay.classList.add('hidden'), 300);
+                        }
+                    }).catch(error => {
+                        console.log("Autoplay memerlukan sentuhan pengguna:", error);
+                    });
+                }
+            }
         }
 
         // Ketika Video Benih Selesai Diputar -> Munculkan Pohon Akhir
@@ -1189,23 +1164,25 @@
             const videoContainer = document.getElementById('video-container');
             const imgEnd = document.getElementById('img-end');
 
-            videoContainer.style.opacity = '0';
-            videoContainer.style.pointerEvents = 'none';
+            if(videoContainer && imgEnd) {
+                videoContainer.style.opacity = '0';
+                videoContainer.style.pointerEvents = 'none';
 
-            setTimeout(() => {
-                videoContainer.classList.add('hidden');
-                imgEnd.style.opacity = '1';
-                imgEnd.style.pointerEvents = 'auto';
-            }, 500);
+                setTimeout(() => {
+                    videoContainer.classList.add('hidden');
+                    imgEnd.style.opacity = '1';
+                    imgEnd.style.pointerEvents = 'auto';
+                }, 500);
+            }
         }
 
-        // Zoom ke Klaster Layanan Pilihan di Atas Pohon
+        // Zoom ke Klaster Layanan Pilihan di Atas Gambar Pohon
         function zoomToLayanan(id) {
             const imgEnd = document.getElementById('img-end');
             const modal = document.getElementById('layanan-modal');
             const data = layananDetailData[id];
 
-            if (!data) return;
+            if (!data || !imgEnd) return;
 
             imgEnd.style.transform = `scale(${data.zoom.scale}) translate(${data.zoom.x}%, ${data.zoom.y}%)`;
 
@@ -1216,8 +1193,10 @@
             document.getElementById('modal-req').innerHTML = data.req;
 
             setTimeout(() => {
-                modal.classList.remove('hidden');
-                setTimeout(() => modal.classList.remove('opacity-0'), 50);
+                if(modal) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modal.classList.remove('opacity-0'), 50);
+                }
             }, 450);
         }
 
@@ -1225,11 +1204,13 @@
             const imgEnd = document.getElementById('img-end');
             const modal = document.getElementById('layanan-modal');
 
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                imgEnd.style.transform = 'scale(1) translate(0%, 0%)';
-            }, 250);
+            if(modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    if(imgEnd) imgEnd.style.transform = 'scale(1) translate(0%, 0%)';
+                }, 250);
+            }
         }
 
         // Putar Ulang Animasi dari Awal
@@ -1240,19 +1221,28 @@
             const overlay = document.getElementById('play-overlay');
             const imgEnd = document.getElementById('img-end');
 
-            imgEnd.style.transform = 'scale(1) translate(0%, 0%)';
-            imgEnd.style.opacity = '0';
-            imgEnd.style.pointerEvents = 'none';
+            if(imgEnd) {
+                imgEnd.style.transform = 'scale(1) translate(0%, 0%)';
+                imgEnd.style.opacity = '0';
+                imgEnd.style.pointerEvents = 'none';
+            }
 
-            videoContainer.classList.remove('hidden');
-            videoContainer.style.opacity = '1';
-            videoContainer.style.pointerEvents = 'auto';
+            if(videoContainer) {
+                videoContainer.classList.remove('hidden');
+                videoContainer.style.opacity = '1';
+                videoContainer.style.pointerEvents = 'auto';
+            }
 
-            overlay.classList.remove('hidden');
-            overlay.style.opacity = '1';
+            if(overlay) {
+                overlay.classList.remove('hidden');
+                overlay.style.opacity = '1';
+            }
 
-            video.pause();
-            video.currentTime = 0;
+            if(video) {
+                video.pause();
+                video.currentTime = 0;
+                playSeedVideo();
+            }
         }
 
         function toggleModeLansia() {
@@ -1272,17 +1262,18 @@
         function showToast(message) {
             const toast = document.getElementById('toast-notification');
             const toastText = document.getElementById('toast-text');
-            toastText.innerText = message;
-            
-            toast.classList.remove('translate-x-full');
-            setTimeout(() => {
-                toast.classList.add('translate-x-full');
-            }, 3500);
+            if(toastText && toast) {
+                toastText.innerText = message;
+                toast.classList.remove('translate-x-full');
+                setTimeout(() => {
+                    toast.classList.add('translate-x-full');
+                }, 3500);
+            }
         }
 
         function toggleSwitcherModal() {
             const modal = document.getElementById('modal-switcher');
-            modal.classList.toggle('hidden');
+            if(modal) modal.classList.toggle('hidden');
         }
 
         function simulasiPortalNav(portalTitle) {
@@ -1292,9 +1283,11 @@
 
         function loadYoutubeVideo() {
             const container = document.getElementById('youtube-facade');
-            container.innerHTML = `
-                <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/FSqc9qFuqVM?autoplay=1" title="GO-POSITIF DESA GONOHARJO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            `;
+            if(container) {
+                container.innerHTML = `
+                    <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/FSqc9qFuqVM?autoplay=1" title="GO-POSITIF DESA GONOHARJO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                `;
+            }
         }
 
         let kehadiranChart;
@@ -1375,16 +1368,19 @@
         }
 
         function toggleITConfigModal() {
-            document.getElementById('modal-it-config').classList.toggle('hidden');
+            const modal = document.getElementById('modal-it-config');
+            if(modal) modal.classList.toggle('hidden');
         }
 
         function toggleFilterVisibility(filterType) {
             const isChecked = document.getElementById('toggle-' + filterType).checked;
             const targetEl = document.getElementById('filter-box-' + filterType);
-            if(isChecked) {
-                targetEl.classList.remove('hidden');
-            } else {
-                targetEl.classList.add('hidden');
+            if(targetEl) {
+                if(isChecked) {
+                    targetEl.classList.remove('hidden');
+                } else {
+                    targetEl.classList.add('hidden');
+                }
             }
         }
 
@@ -1411,6 +1407,8 @@
 
         function addChatMessage(sender, text) {
             const chatBox = document.getElementById('chat-messages');
+            if(!chatBox) return;
+
             const msgDiv = document.createElement('div');
             
             if(sender === 'user') {
