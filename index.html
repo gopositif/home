@@ -1317,7 +1317,7 @@
 
     </main>
 
-    <!-- MODAL WEB SWITCHER -->
+    <!-- MODAL WEB SWITCHER (UPDATED) -->
     <div id="modal-switcher" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="white-card p-6 max-w-md w-full space-y-5 bg-[#FAF7F0] border-2 border-olive-green/30 shadow-2xl">
             <div class="flex items-center justify-between border-b border-olive-green/10 pb-3">
@@ -1333,15 +1333,17 @@
             <p class="text-xs text-earth-brown font-medium">Pilih portal ekosistem GO-Positif Gonoharjo yang ingin Anda akses:</p>
 
             <div class="space-y-2.5 text-xs">
-                <button onclick="simulasiPortalNav('WEB UTAMA GO-POSITIF')" class="w-full p-3 btn-primary font-bold flex items-center justify-between shadow-xs">
+                <!-- 1. PORTAL UTAMA (Aktif di Web Utama) -->
+                <a href="https://gopositif.github.io/home/" class="w-full p-3 btn-primary font-bold flex items-center justify-between shadow-xs">
                     <span class="flex items-center space-x-2">
                         <i class="fa-solid fa-house text-sun-yellow"></i>
                         <span>1. PORTAL UTAMA POSYANDU (Aktif)</span>
                     </span>
                     <i class="fa-solid fa-circle-check text-sun-yellow"></i>
-                </button>
+                </a>
 
-                <a href="https://gopositif.github.io/sasaran/" target="_blank" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
+                <!-- 2. PORTAL SASARAN -->
+                <a href="https://gopositif.github.io/sasaran/" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
                     <span class="flex items-center space-x-2">
                         <i class="fa-solid fa-qrcode text-olive-green"></i>
                         <span>2. PORTAL SASARAN POSYANDU</span>
@@ -1349,22 +1351,25 @@
                     <i class="fa-solid fa-arrow-right text-earth-brown/50"></i>
                 </a>
 
-                <button onclick="simulasiPortalNav('Kader Input (Login)')" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
+                <!-- 3. PORTAL KADER -->
+                <a href="https://gopositif.github.io/kader/" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
                     <span class="flex items-center space-x-2">
                         <i class="fa-solid fa-user-pen text-sun-yellow"></i>
                         <span>3. PORTAL KADER POSYANDU</span>
                     </span>
                     <i class="fa-solid fa-arrow-right text-earth-brown/50"></i>
-                </button>
+                </a>
 
-                <button onclick="simulasiPortalNav('Admin Laporan (Login)')" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
+                <!-- 4. PORTAL ADMIN -->
+                <a href="https://gopositif.github.io/admin/" class="w-full p-3 bg-white text-earth-brown font-bold rounded-xl flex items-center justify-between hover:bg-base-cream border border-olive-green/20 shadow-xs">
                     <span class="flex items-center space-x-2">
                         <i class="fa-solid fa-chart-line text-deep-green"></i>
                         <span>4. PORTAL ADMIN POSYANDU</span>
                     </span>
                     <i class="fa-solid fa-arrow-right text-earth-brown/50"></i>
-                </button>
+                </a>
 
+                <!-- 5. PORTAL IT (Opsional/Opsional ke Admin atau Halaman Khusus) -->
                 <button onclick="simulasiPortalNav('Login IT (Otorisasi Khusus)')" class="w-full p-3 btn-brown font-extrabold flex items-center justify-between shadow-xs">
                     <span class="flex items-center space-x-2">
                         <i class="fa-solid fa-lock text-sun-yellow"></i>
@@ -1375,7 +1380,6 @@
             </div>
         </div>
     </div>
-
     <!-- MODAL PENGATURAN FILTER (IT CONTROL PANEL) -->
     <div id="modal-it-config" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="white-card p-6 max-w-md w-full bg-[#FAF7F0] space-y-4 border-2 border-olive-green/30 shadow-2xl">
