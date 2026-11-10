@@ -725,12 +725,12 @@
                         </div>
                     </div>
 
-                    <!-- DIRECT LINK / SWITCHER KE WEB SASARAN POSYANDU (TANPA TAB BARU) -->
+                    <!-- DIRECT LINK KE WEB SASARAN POSYANDU -->
                     <div class="w-full lg:w-auto flex flex-col justify-center items-stretch flex-shrink-0">
-                        <button onclick="openSasaranModal()" class="btn-primary px-6 py-3.5 text-xs md:text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:scale-105 transition-transform text-center w-full lg:w-auto cursor-pointer">
+                        <a href="https://gopositif.github.io/sasaran/" target="_blank" rel="noopener noreferrer" class="btn-primary px-6 py-3.5 text-xs md:text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:scale-105 transition-transform text-center">
                             <i class="fa-solid fa-right-to-bracket text-sun-yellow"></i>
                             <span>Masuk Web Sasaran Posyandu</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1380,39 +1380,6 @@
             </div>
         </div>
     </div>
-
-    <!-- MODAL EMBED VIEWER WEB SASARAN POSYANDU (WEB SWITCHER STYLE) -->
-    <div id="modal-sasaran-viewer" class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden flex items-center justify-center p-2 sm:p-4">
-        <div class="white-card w-full max-w-5xl h-[90vh] bg-[#FAF7F0] flex flex-col border-2 border-olive-green/40 shadow-2xl overflow-hidden rounded-2xl animate-fade-in">
-            <!-- Header Modal Viewer -->
-            <div class="flex items-center justify-between px-4 py-3 bg-deep-green text-white border-b border-olive-green/30">
-                <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                        <i class="fa-solid fa-qrcode text-sun-yellow text-base"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-extrabold text-xs sm:text-sm tracking-wide">Portal Sasaran Posyandu (In-Page View)</h3>
-                        <p class="text-[10px] text-white/80">Terintegrasi langsung tanpa membuka tab browser baru</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <a href="https://gopositif.github.io/sasaran/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-[11px] font-bold transition flex items-center space-x-1 border border-white/20" title="Buka di Tab Baru jika diperlukan">
-                        <i class="fa-solid fa-external-link-alt text-[10px]"></i>
-                        <span class="hidden sm:inline">Tab Baru</span>
-                    </a>
-                    <button onclick="closeSasaranModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center transition cursor-pointer" title="Tutup">
-                        <i class="fa-solid fa-xmark text-sm"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Body Iframe Viewer -->
-            <div class="flex-grow w-full h-full relative bg-white">
-                <iframe id="iframe-sasaran" src="" class="w-full h-full border-0" title="Web Sasaran Posyandu Gonoharjo"></iframe>
-            </div>
-        </div>
-    </div>
-
-    
     <!-- MODAL PENGATURAN FILTER (IT CONTROL PANEL) -->
     <div id="modal-it-config" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="white-card p-6 max-w-md w-full bg-[#FAF7F0] space-y-4 border-2 border-olive-green/30 shadow-2xl">
@@ -1600,30 +1567,6 @@
                 }
             }
         });
-
-        // FUNGSI MEMBUKA & MENUTUP WEB SASARAN POSYANDU SEBAGAI IN-PAGE VIEWER
-        function openSasaranModal() {
-            const modal = document.getElementById('modal-sasaran-viewer');
-            const iframe = document.getElementById('iframe-sasaran');
-            if(modal && iframe) {
-                // Muat URL hanya sekali saat pertama kali dibuka untuk efisiensi performa
-                if(!iframe.src || iframe.src === "" || iframe.src === "about:blank") {
-                    iframe.src = "https://gopositif.github.io/sasaran/";
-                }
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Mencegah scroll body belakang
-            }
-        }
-
-        function closeSasaranModal() {
-            const modal = document.getElementById('modal-sasaran-viewer');
-            if(modal) {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Mengembalikan scroll body
-            }
-        }
-
-        
 
         // VARIABEL SYSTEM ANTI SPAM CHATBOT & FORM
         let lastDukunganSubmitTime = 0;
