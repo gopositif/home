@@ -2,7 +2,11 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+    <meta name="theme-color" content="#1E4620">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>GO-Positif - Gonoharjo Posyandu ILP Aktif</title>
     <!-- Favicon Logo Tab Browser -->
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1r5Z3o71WH4mpF5qn1Dfeav_V7qNnYldv">
@@ -243,13 +247,76 @@
             z-index: -1;
         }
     </style>
+<style id="v7-polish">
+/* ===== V7: POLISH VISUAL, VIDEO & POHON SIKLUS ===== */
+html{-webkit-text-size-adjust:100%;scroll-padding-top:120px}
+html.v7-lock{overflow:hidden}
+body{font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-bottom:env(safe-area-inset-bottom)}
+body::before{inset:0;width:auto;height:auto}
+@media(max-width:767px){body::before{display:none}}
+img{max-width:100%}
+/* class yang tidak dikenal Tailwind v3 (penyebab tampilan rusak) */
+.shadow-xs{box-shadow:0 1px 3px rgba(30,70,32,.14)}
+.z-25{z-index:25}.border-3{border-width:3px}
+.backdrop-blur-xs{-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none}
+.no-scrollbar::-webkit-scrollbar{display:none}
+/* tipografi: lebih besar & nyaman dibaca */
+h1,h2,h3,h4{letter-spacing:-.01em;text-wrap:balance}
+main h2{font-size:clamp(1.65rem,1.2rem + 1.8vw,2.6rem);line-height:1.2}
+main .text-xs,footer .text-xs{font-size:.8125rem;line-height:1.6}
+main [class*="text-[10px]"],main [class*="text-[11px]"]{font-size:.72rem}
+@media(min-width:768px){main .text-xs{font-size:.875rem}main .md\:text-sm{font-size:.95rem;line-height:1.7}}
+main p{text-wrap:pretty}
+/* kartu 3D */
+.white-card{box-shadow:inset 0 1px 0 #fff,0 2px 4px rgba(30,70,32,.05),0 14px 28px -12px rgba(30,70,32,.16),0 30px 44px -30px rgba(30,70,32,.14);border-color:rgba(124,146,70,.2);transition:transform .2s ease-out,box-shadow .3s ease}
+.white-card:hover{box-shadow:inset 0 1px 0 #fff,0 4px 8px rgba(30,70,32,.07),0 22px 40px -14px rgba(30,70,32,.22)}
+.white-card.tilt{transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0)) translateY(-4px)}
+main div[class*="bg-soft-"][class*="items-center"][class*="justify-center"]{box-shadow:inset 0 1px 0 #fff,0 3px 0 rgba(124,146,70,.28),0 8px 12px -6px rgba(30,70,32,.25)}
+/* tombol timbul */
+:is(button,a):is(.btn-primary,.btn-brown,.btn-olive){min-height:44px;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 0 rgba(0,0,0,.28),0 12px 18px -8px rgba(30,70,32,.45);transition:transform .15s,box-shadow .15s,background-color .2s}
+:is(button,a):is(.btn-primary,.btn-brown,.btn-olive):hover{transform:translateY(-2px)}
+:is(button,a):is(.btn-primary,.btn-brown,.btn-olive):active{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 0 rgba(0,0,0,.28)}
+header :is(button,a):is(.btn-olive){min-height:38px}
+/* header & tab menu */
+header{box-shadow:0 8px 22px -14px rgba(30,70,32,.4)}
+nav{scroll-snap-type:x proximity}
+nav .nav-tab{min-height:40px;padding:.5rem 1rem;font-size:.875rem;scroll-snap-align:center;transition:transform .15s,background-color .2s,box-shadow .2s}
+nav .nav-tab:not(.active):hover{background:#EBF2DF;transform:translateY(-1px)}
+nav .nav-tab.active{background:linear-gradient(180deg,#2f6a33,#1E4620);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 3px 0 #123014,0 8px 14px -4px rgba(30,70,32,.4)}
+section[id^="content-"]:not(.hidden){animation:v7in .4s ease-out}
+@keyframes v7in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* formulir: 16px mencegah zoom otomatis di iPhone */
+main input,main select,main textarea{font-size:16px!important;border-radius:12px;min-height:44px}
+main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(124,146,70,.35)}
+:focus-visible{outline:3px solid #F3A94B;outline-offset:2px}
+.v7-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+/* video pembuka: ringan & pas di semua layar */
+#opening-video-overlay{height:100dvh;filter:none!important;transform:none!important;transition:opacity .6s ease}
+.video-box-16-9{width:min(100vw,calc(100dvh * 16 / 9));max-width:100vw;max-height:100dvh;box-shadow:none}
+#main-opening-video{object-fit:contain;background:#000;transform:translateZ(0)}
+.v7-spin{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px;border:3px solid rgba(255,255,255,.25);border-top-color:#F3A94B;border-radius:50%;animation:v7spin .9s linear infinite;z-index:24;pointer-events:none}
+@keyframes v7spin{to{transform:rotate(360deg)}}
+.v7-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.15);z-index:26}
+.v7-bar i{display:block;height:100%;width:0;background:#F3A94B}
+/* pohon siklus: antar tahap menyatu tanpa jeda */
+#pohon-viewport{isolation:isolate;background:#0f1a10;max-height:85dvh}
+#stage-seed,#stage-video,#stage-tree{display:flex!important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .55s ease,visibility 0s linear .55s}
+#pohon-viewport .stage-on{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+#seed-video{background:#000}
+#pohon-canvas{transition:transform .8s cubic-bezier(.4,0,.2,1)}
+#pohon-canvas [onclick^="zoomToLeaf"]{transition:box-shadow .2s,background .2s}
+#pohon-canvas [onclick^="zoomToLeaf"]:hover,#pohon-canvas [onclick^="zoomToLeaf"]:focus-visible{background:radial-gradient(circle,rgba(255,255,255,.28),transparent 70%);box-shadow:0 0 0 3px rgba(243,169,75,.75)}
+@media(max-width:767px){#leaf-detail-panel{position:fixed;inset:0;z-index:9990;padding:12px}#leaf-detail-panel>div{max-height:88dvh}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased bg-[#FAF7F0]">
 
     <!-- OVERLAY LAYAR FULL CINEMATIC OPENING VIDEO -->
     <div id="opening-video-overlay">
         <div class="video-box-16-9 relative">
-            <video id="main-opening-video" playsinline muted autoplay onended="closeOpeningVideo()">
+            <video id="main-opening-video" playsinline webkit-playsinline muted autoplay preload="auto" disablepictureinpicture disableremoteplayback onended="closeOpeningVideo()">
                 <source src="https://raw.githubusercontent.com/gopositif/home/main/video/Opening%20NOwatermark.mp4" type="video/mp4">
                 Browser Anda tidak mendukung pemutaran video.
             </video>
@@ -295,7 +362,7 @@
                 <div class="flex items-center space-x-1.5 md:hidden">
                     <button onclick="toggleModeLansia()" class="px-2 py-1.5 bg-white text-earth-brown rounded-lg border border-olive-green/30 text-[10px] font-bold flex items-center space-x-1 shadow-xs">
                         <i class="fa-solid fa-eye text-olive-green"></i>
-                        <span>Lansia</span>
+                        <span id="label-mode-lansia-short">Lansia</span>
                     </button>
                     <button onclick="toggleSwitcherModal()" class="btn-olive px-2.5 py-1.5 text-[10px] font-bold flex items-center space-x-1 shadow-xs">
                         <i class="fa-solid fa-cubes text-sun-yellow"></i>
@@ -767,7 +834,7 @@
                     </div>
 
                     <div id="stage-video" class="absolute inset-0 w-full h-full hidden bg-black flex items-center justify-center">
-                        <video id="seed-video" class="w-full h-full object-cover" onended="finishVideoAnimation()">
+                        <video id="seed-video" class="w-full h-full object-cover" playsinline webkit-playsinline preload="none" disablepictureinpicture onended="finishVideoAnimation()">
                             <source src="https://raw.githubusercontent.com/gopositif/home/main/video/Benih%20layanan.mp4" type="video/mp4">
                             Browser Anda tidak mendukung tag video.
                         </video>
@@ -2127,5 +2194,123 @@
             initChart();
         });
     </script>
+<script id="v7-polish-js">
+/* ===== V7: VIDEO PEMBUKA, POHON SIKLUS & POLISH ===== */
+(function(){
+const $=id=>document.getElementById(id);
+const conn=navigator.connection||{};
+const slow=!!conn.saveData||/(^|-)2g$/.test(conn.effectiveType||'');
+const idle=window.requestIdleCallback?f=>requestIdleCallback(f,{timeout:6000}):f=>setTimeout(f,3000);
+
+/* --- Video pembuka --- */
+window.closeOpeningVideo=function(){
+  const o=$('opening-video-overlay'),v=$('main-opening-video');
+  if(!o||o.dataset.closed)return;
+  o.dataset.closed=1;
+  if(v)v.pause();
+  o.classList.add('video-exit-active');
+  setTimeout(()=>{
+    o.style.display='none';
+    if(v){v.innerHTML='';v.removeAttribute('src');v.load();}   /* bebaskan memori */
+    document.documentElement.classList.remove('v7-lock');
+    idle(warm);
+  },650);
+};
+(function(){
+  const o=$('opening-video-overlay'),v=$('main-opening-video');
+  document.documentElement.classList.add('v7-lock');
+  if(!o||!v)return;
+  if(slow){setTimeout(window.closeOpeningVideo,300);return;}   /* hemat kuota / sinyal lemah */
+  o.querySelector('.video-box-16-9').insertAdjacentHTML('beforeend','<div class="v7-spin" id="v7-spin" aria-hidden="true"></div><div class="v7-bar"><i id="v7-bar-i"></i></div>');
+  const spin=$('v7-spin'),bar=$('v7-bar-i');
+  let wd=setTimeout(window.closeOpeningVideo,6000);           /* video tak mulai: langsung masuk web */
+  v.addEventListener('waiting',()=>{spin.style.display='block';clearTimeout(wd);wd=setTimeout(window.closeOpeningVideo,8000);});
+  v.addEventListener('playing',()=>{spin.style.display='none';clearTimeout(wd);});
+  v.addEventListener('timeupdate',()=>{if(v.duration)bar.style.width=(v.currentTime/v.duration*100)+'%';});
+  v.addEventListener('error',window.closeOpeningVideo);
+  document.addEventListener('visibilitychange',()=>{if(!o.dataset.closed){document.hidden?v.pause():v.play().catch(()=>{});}});
+})();
+
+/* --- Pohon Siklus: preload + transisi menyatu --- */
+const stages=['seed','video','tree'];
+const show=n=>stages.forEach(k=>$('stage-'+k)&&$('stage-'+k).classList.toggle('stage-on',k===n));
+let warmed=false;
+function warm(){
+  if(warmed)return;warmed=true;
+  ['13vtHvGiq3BzxGqiZcsf5F5blvvBjAKEO','1FYUm1jtgizIBVG1xnglOP9w7GBkwo49r'].forEach(id=>{
+    const i=new Image();i.decoding='async';i.src='https://lh3.googleusercontent.com/d/'+id;
+    if(i.decode)i.decode().catch(()=>{});
+  });
+  const sv=$('seed-video');if(sv){sv.preload='auto';sv.load();}
+}
+function finish(){show('tree');}
+window.finishVideoAnimation=finish;
+window.startSeedAnimation=function(e){
+  const t=$('seed-click-target'),v=$('seed-video');
+  if(!t||!v)return;
+  warm();
+  const r=t.getBoundingClientRect(),d=document.createElement('div');
+  d.className='ripple-effect';d.style.left=(e.clientX-r.left-20)+'px';d.style.top=(e.clientY-r.top-20)+'px';
+  t.appendChild(d);setTimeout(()=>d.remove(),700);
+  const hint=document.querySelector('#stage-seed p');
+  if(hint){hint.dataset.t=hint.dataset.t||hint.textContent;hint.textContent='Memuat animasi…';}
+  let started=false;
+  const go=()=>{if(started)return;started=true;show('video');v.play().catch(finish);};
+  v.currentTime=0;
+  if(v.readyState>=3)setTimeout(go,300);
+  else{v.addEventListener('canplay',go,{once:true});setTimeout(go,4000);}
+};
+(function(){
+  const v=$('seed-video');if(!v)return;
+  v.addEventListener('timeupdate',()=>{if(v.duration&&v.duration-v.currentTime<.6)finish();});   /* tumpang tindih halus */
+  v.addEventListener('error',finish);
+})();
+window.resetToSeed=function(){
+  resetPohonZoom();
+  const v=$('seed-video');if(v){v.pause();v.currentTime=0;}
+  const hint=document.querySelector('#stage-seed p');
+  if(hint&&hint.dataset.t)hint.textContent=hint.dataset.t;
+  show('seed');
+};
+show('seed');
+
+/* --- Tab: preload & tab aktif selalu terlihat --- */
+const _sw=window.switchTab;
+window.switchTab=function(t){
+  _sw(t);
+  if(t==='layanan')warm();
+  const b=$('tab-'+t);if(b&&b.scrollIntoView)b.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+};
+
+/* --- Aksesibilitas area daun --- */
+document.querySelectorAll('#pohon-canvas [onclick^="zoomToLeaf"]').forEach(el=>{
+  el.setAttribute('role','button');el.tabIndex=0;
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+});
+
+/* --- Tabel lebar bisa digeser di HP, gambar ringan --- */
+document.querySelectorAll('table').forEach(t=>{
+  if(t.parentElement.classList.contains('v7-scroll')||/overflow-x-auto/.test(t.parentElement.className))return;
+  const w=document.createElement('div');w.className='v7-scroll';t.parentNode.insertBefore(w,t);w.appendChild(t);
+});
+document.querySelectorAll('img').forEach(i=>{i.decoding='async';if(!i.closest('#opening-video-overlay,header'))i.loading='lazy';});
+
+/* --- Efek miring 3D (hanya mouse, kartu kecil) --- */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  let last=null;
+  const off=c=>{c.classList.remove('tilt');c.style.removeProperty('--rx');c.style.removeProperty('--ry');};
+  document.addEventListener('pointermove',e=>{
+    const c=e.target.closest&&e.target.closest('.white-card');
+    if(last&&last!==c)off(last);
+    if(!c||c.offsetWidth>600||c.querySelector('input,textarea,select,canvas,iframe,table')){last=null;return;}
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--rx',(-((e.clientY-r.top)/r.height-.5)*5).toFixed(2)+'deg');
+    c.style.setProperty('--ry',(((e.clientX-r.left)/r.width-.5)*6).toFixed(2)+'deg');
+    c.classList.add('tilt');last=c;
+  },{passive:true});
+  document.addEventListener('pointerleave',()=>{if(last){off(last);last=null;}});
+}
+})();
+</script>
 </body>
 </html>
