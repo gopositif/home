@@ -310,6 +310,79 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
 @media(max-width:767px){#leaf-detail-panel{position:fixed;inset:0;z-index:9990;padding:12px}#leaf-detail-panel>div{max-height:88dvh}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
+<style id="v8-style">
+/* ===== V8: WARNA, KOMPONEN BARU & RESPONSIF ===== */
+.tone-green{--c:#2E7D32;--d:#1B5E20;--b:#E8F5E9}.tone-sky{--c:#0284C7;--d:#075985;--b:#E0F2FE}
+.tone-amber{--c:#D97706;--d:#92400E;--b:#FEF3C7}.tone-pink{--c:#DB2777;--d:#9D174D;--b:#FCE7F3}
+.tone-violet{--c:#7C3AED;--d:#5B21B6;--b:#EDE9FE}.tone-rose{--c:#E11D48;--d:#9F1239;--b:#FFE4E6}
+.v8-num{width:1.85rem;height:1.85rem;border-radius:9999px;background:var(--sun-yellow);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 0 #c9852f}
+.v8-sub{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;color:var(--deep-green);margin-bottom:.75rem}
+.v8-sub i{color:var(--olive-green)}.v8-sub-evt i{color:#DB2777}
+.v8-chip{display:inline-block;padding:.15rem .65rem;border-radius:9999px;font-size:.72rem;font-weight:800;background:var(--b,#EBF2DF);color:var(--d,#1E4620);border:1px solid var(--c,#7C9246)}
+.v8-leg{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:9999px;background:var(--b);color:var(--d);font-weight:800;font-size:.78rem;border:1.5px solid var(--c)}
+.v8-leg i{width:.65rem;height:.65rem;border-radius:9999px;background:var(--c);display:inline-block}
+/* kartu jadwal rutin (warna sesuai nama posyandu) */
+.sch-card{display:flex;gap:.85rem;align-items:stretch;padding:.75rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 75%);border:1px solid var(--b);border-left:7px solid var(--c);box-shadow:0 6px 14px -8px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
+.sch-card:hover{transform:translateY(-2px);box-shadow:0 12px 20px -10px rgba(0,0,0,.3)}
+.sch-date{min-width:4.1rem;border-radius:14px;background:var(--c);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.4rem .3rem;box-shadow:0 3px 0 var(--d)}
+.sch-date b{font-size:1.65rem;line-height:1;font-weight:900;font-family:Quicksand,sans-serif}.sch-date small{font-size:.72rem;font-weight:800;letter-spacing:.08em;margin-top:.15rem}
+.sch-pn{display:inline-block;background:var(--c);color:#fff;font-weight:800;font-size:.72rem;padding:.15rem .65rem;border-radius:9999px;letter-spacing:.02em}
+.sch-card h5{color:var(--d);font-weight:800;font-size:.95rem;line-height:1.35;margin-top:.3rem}
+.sch-meta{font-size:.8rem;font-weight:600;color:#5A3B21;display:flex;flex-wrap:wrap;gap:.2rem .9rem;margin-top:.3rem}.sch-meta i{color:var(--c);margin-right:.25rem}
+/* kartu acara khusus (beda warna + ikon logo) */
+.evt-card{position:relative;overflow:hidden;display:flex;gap:.9rem;padding:1rem;border-radius:18px;color:#fff;background:linear-gradient(135deg,#9d174d,#7c3aed);box-shadow:0 14px 24px -12px rgba(124,58,237,.7);transition:transform .2s}
+.evt-card.b{background:linear-gradient(135deg,#b45309,#be123c);box-shadow:0 14px 24px -12px rgba(190,18,60,.65)}
+.evt-card:hover{transform:translateY(-2px)}
+.evt-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:9999px;background:rgba(255,255,255,.1)}
+.evt-ic{width:3.4rem;height:3.4rem;border-radius:16px;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;color:#FDE68A}
+.evt-badge{display:inline-flex;align-items:center;gap:.3rem;background:#FDE68A;color:#7c2d12;font-weight:900;font-size:.68rem;letter-spacing:.08em;padding:.15rem .6rem;border-radius:9999px;text-transform:uppercase}
+.evt-card h5{font-weight:900;font-size:1.02rem;line-height:1.3;margin:.35rem 0 .15rem;position:relative}
+.evt-card p{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.92);position:relative}
+.evt-meta{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem;position:relative}
+.evt-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:9999px;padding:.15rem .65rem;font-size:.76rem;font-weight:700}
+.evt-pill.pn{background:#fff;color:var(--d);border-color:#fff}
+/* info & penyuluhan */
+.v8-info{display:flex;gap:.9rem;padding:1rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 80%);border:1px solid var(--b);border-left:6px solid var(--c);box-shadow:0 6px 14px -8px rgba(0,0,0,.2);transition:transform .2s}
+.v8-info:hover{transform:translateY(-2px)}
+.v8-info-ic{width:3rem;height:3rem;border-radius:14px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 3px 0 var(--d)}
+/* filter & statistik grafik */
+.v8-f{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.v8-f>span{font-size:.75rem;font-weight:800;color:var(--earth-brown)}
+.v8-f input,.v8-f select{width:100%;padding:.5rem .75rem;background:#fff;color:var(--deep-green);font-weight:700;border:1px solid rgba(124,146,70,.35)}
+.v8-stat{background:linear-gradient(160deg,#fff,var(--soft,#EBF2DF));border:1px solid rgba(124,146,70,.25);border-radius:14px;padding:.6rem .5rem;text-align:center}
+.v8-stat span{display:block;font-size:.72rem;font-weight:700;color:var(--earth-brown)}.v8-stat b{font-size:1.2rem;font-weight:900;color:var(--deep-green);font-family:Quicksand,sans-serif}
+/* edukasi */
+.v8-edu-hero{padding:1.25rem;color:#fff;background:linear-gradient(120deg,#be185d,#e11d48 50%,#f59e0b);display:grid;gap:1rem}
+@media(min-width:1024px){.v8-edu-hero{grid-template-columns:1fr 1.1fr;align-items:center;padding:1.5rem 1.75rem}}
+.v8-tip-today{background:#fff;color:var(--earth-brown);border-radius:18px;padding:.9rem 1rem;box-shadow:0 10px 20px -10px rgba(0,0,0,.4)}
+.edu-card{position:relative;border-radius:20px;background:#fff;border:1px solid var(--b);overflow:hidden;box-shadow:0 8px 18px -10px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 16px 26px -12px rgba(0,0,0,.35)}
+.edu-top{background:linear-gradient(120deg,var(--b),#fff);padding:1rem 1rem .5rem;display:flex;align-items:center;gap:.75rem}
+.edu-ic{width:3.2rem;height:3.2rem;border-radius:9999px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 0 0 5px var(--b),0 4px 0 var(--d);flex-shrink:0}
+.edu-card h4{font-weight:800;font-size:.98rem;color:var(--deep-green);line-height:1.35;padding:0 1rem}
+.edu-card p{font-size:.86rem;color:var(--earth-brown);font-weight:500;line-height:1.65;padding:.4rem 1rem 0}
+.edu-foot{margin-top:auto;padding:.7rem 1rem;font-size:.78rem;font-weight:800;color:var(--d);display:flex;align-items:center;gap:.4rem}
+.edu-foot i{color:var(--c)}
+/* dokumentasi */
+.doc-card{border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(124,146,70,.25);box-shadow:0 10px 20px -12px rgba(0,0,0,.35);cursor:pointer;text-align:left;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;padding:0;width:100%}
+.doc-card:hover{transform:translateY(-4px);box-shadow:0 18px 28px -14px rgba(0,0,0,.4)}
+.doc-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e7eadc}
+.doc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.doc-card:hover .doc-img img{transform:scale(1.06)}
+.doc-img .v8-chip{position:absolute;left:.7rem;top:.7rem;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.doc-zoom{position:absolute;right:.7rem;top:.7rem;width:2.3rem;height:2.3rem;border-radius:9999px;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.doc-cap{padding:.9rem 1rem 1rem;border-top:4px solid var(--c)}
+.doc-cap h4{font-weight:800;color:var(--deep-green);font-size:1rem;line-height:1.35}.doc-cap p{font-size:.85rem;color:var(--earth-brown);font-weight:500;line-height:1.6;margin-top:.25rem}
+/* youtube */
+.v8-yt-card{border-radius:20px;padding:1.25rem 1.35rem;color:#fff;background:linear-gradient(140deg,#b91c1c,#dc2626 55%,#7f1d1d);display:flex;flex-direction:column;justify-content:center;gap:.85rem;box-shadow:0 14px 26px -14px rgba(185,28,28,.8)}
+.v8-yt-logo{width:2.8rem;height:2.8rem;border-radius:14px;background:#fff;color:#dc2626;display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.v8-yt-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:.7rem 1.1rem;border-radius:9999px;background:#fff;color:#b91c1c;font-weight:900;font-size:.92rem;letter-spacing:.02em;box-shadow:0 4px 0 rgba(0,0,0,.28);transition:transform .15s,box-shadow .15s}
+.v8-yt-btn:hover{transform:translateY(-2px)}.v8-yt-btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.28)}
+.v8-yt-btn i.fa-youtube{animation:v8bell 2.4s ease-in-out infinite}
+@keyframes v8bell{0%,70%,100%{transform:none}78%{transform:rotate(-14deg)}86%{transform:rotate(12deg)}94%{transform:rotate(-6deg)}}
+@media(max-width:420px){.sch-card{gap:.6rem;padding:.6rem}.sch-date{min-width:3.6rem}.evt-card{padding:.85rem}.evt-ic{width:2.9rem;height:2.9rem;font-size:1.3rem}}
+body.mode-lansia .sch-card h5,body.mode-lansia .evt-card h5{font-size:1.15rem!important}
+body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-card p,body.mode-lansia .doc-cap p{font-size:1rem!important}
+</style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased bg-[#FAF7F0]">
 
@@ -474,269 +547,201 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
                     </span>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="white-card p-5 sm:p-6 space-y-3.5 border-l-4 border-olive-green">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-soft-green text-deep-green font-bold flex-shrink-0">
-                                <i class="fa-solid fa-eye text-xl text-olive-green"></i>
-                            </div>
-                            <h3 class="font-extrabold text-deep-green text-lg md:text-xl">Visi Utama</h3>
-                        </div>
-                        <p class="text-xs md:text-sm text-earth-brown leading-relaxed font-medium">
-                            Terwujudnya GO-Positif Gonoharjo sebagai pusat pelayanan kesehatan terpadu berbasis masyarakat yang mandiri, berkualitas, handal, dan berorientasi pada pendampingan pencegahan penyakit secara penuh kasih sayang sepanjang siklus hidup.
-                        </p>
-                    </div>
-
-                    <div class="white-card p-5 sm:p-6 space-y-3.5 border-l-4 border-sun-yellow">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-soft-yellow text-earth-brown font-bold flex-shrink-0">
-                                <i class="fa-solid fa-bullseye text-xl text-sun-yellow"></i>
-                            </div>
-                            <h3 class="font-extrabold text-deep-green text-lg md:text-xl">Misi Utama</h3>
-                        </div>
-                        <ul class="text-xs md:text-sm text-earth-brown space-y-2.5 font-medium">
-                            <li class="flex items-start space-x-2.5">
-                                <i class="fa-solid fa-circle-check text-olive-green mt-0.5 text-xs flex-shrink-0"></i>
-                                <span>Menyelenggarakan pendampingan tumbuh kembang balita secara intensif & suportif untuk optimalisasi gizi anak.</span>
-                            </li>
-                            <li class="flex items-start space-x-2.5">
-                                <i class="fa-solid fa-circle-check text-olive-green mt-0.5 text-xs flex-shrink-0"></i>
-                                <span>Meningkatkan kenyamanan & cakupan skrining kesehatan dini bagi usia produktif dan lansia.</span>
-                            </li>
-                            <li class="flex items-start space-x-2.5">
-                                <i class="fa-solid fa-circle-check text-olive-green mt-0.5 text-xs flex-shrink-0"></i>
-                                <span>Memperkuat integrasi teknologi informasi ramah pengguna dalam pendataan dan pelayanan Posyandu.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6" id="jadwal-kegiatan">
-                    <div class="white-card p-5 sm:p-6 space-y-4">
-                        <div class="flex items-center justify-between border-b border-olive-green/10 pb-3.5 gap-2">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-soft-yellow text-earth-brown font-bold flex-shrink-0">
-                                    <i class="fa-solid fa-calendar-days text-lg text-sun-yellow"></i>
-                                </div>
-                                <h3 class="font-extrabold text-deep-green text-sm sm:text-base md:text-lg">Jadwal Pelayanan Hangat GO-Positif</h3>
-                            </div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-soft-green text-deep-green border border-olive-green/30 flex-shrink-0">Bulan Ini</span>
-                        </div>
-
-                        <div class="space-y-3">
-                            <div class="p-3.5 rounded-xl bg-base-cream flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-olive-green/10 hover:border-olive-green/30 transition">
-                                <div class="space-y-1">
-                                    <p class="text-xs font-extrabold text-olive-green">Kami Menantikan Kehadiran Buah Hati & Bunda</p>
-                                    <p class="text-sm font-bold text-deep-green">Posyandu Balita & Pendampingan Tumbuh Kembang (Dusun Gonoharjo RT 02 / RW 01)</p>
-                                    <p class="text-xs text-earth-brown font-medium"><i class="fa-regular fa-clock mr-1"></i>08.00 - 11.30 WIB</p>
-                                </div>
-                                <div class="text-center bg-white px-3.5 py-2 rounded-xl border border-olive-green/20 shadow-sm self-end sm:self-center flex-shrink-0">
-                                    <span class="block text-sm font-extrabold text-deep-green">12</span>
-                                    <span class="block text-[10px] text-olive-green uppercase font-bold">OKT</span>
-                                </div>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-base-cream flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-olive-green/10 hover:border-sky-300 transition">
-                                <div class="space-y-1">
-                                    <p class="text-xs font-extrabold text-sky-700">Ruang Ceria & Pendampingan Remaja Sehat</p>
-                                    <p class="text-sm font-bold text-deep-green">Posyandu Remaja & Edukasi Nutrisi Diri (Balai Desa Gonoharjo)</p>
-                                    <p class="text-xs text-earth-brown font-medium"><i class="fa-regular fa-clock mr-1"></i>14.00 - 16.30 WIB</p>
-                                </div>
-                                <div class="text-center bg-white px-3.5 py-2 rounded-xl border border-sky-300 shadow-sm self-end sm:self-center flex-shrink-0">
-                                    <span class="block text-sm font-extrabold text-sky-900">18</span>
-                                    <span class="block text-[10px] text-sky-700 uppercase font-bold">OKT</span>
-                                </div>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-base-cream flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-olive-green/10 hover:border-sun-yellow/50 transition">
-                                <div class="space-y-1">
-                                    <p class="text-xs font-extrabold text-earth-brown">Silaturahmi & Pemeriksaan Kesehatan Lansia</p>
-                                    <p class="text-sm font-bold text-deep-green">Posyandu Lansia & Skrining Kebugaran Usia Emas (Posko Kesehatan RT 05)</p>
-                                    <p class="text-xs text-earth-brown font-medium"><i class="fa-regular fa-clock mr-1"></i>08.30 - 12.00 WIB</p>
-                                </div>
-                                <div class="text-center bg-white px-3.5 py-2 rounded-xl border border-sun-yellow/40 shadow-sm self-end sm:self-center flex-shrink-0">
-                                    <span class="block text-sm font-extrabold text-earth-brown">25</span>
-                                    <span class="block text-[10px] text-sun-yellow uppercase font-bold">OKT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="white-card p-5 sm:p-6 space-y-4">
-                        <div class="flex items-center justify-between border-b border-olive-green/10 pb-3.5 gap-2">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-soft-green text-deep-green font-bold flex-shrink-0">
-                                    <i class="fa-solid fa-bullhorn text-lg text-olive-green"></i>
-                                </div>
-                                <h3 class="font-extrabold text-deep-green text-sm sm:text-base md:text-lg">Kabari & Informasi Ramah</h3>
-                            </div>
-                            <span class="text-xs font-bold text-earth-brown flex-shrink-0">Terbaru</span>
-                        </div>
-
-                        <div class="space-y-3">
-                            <article class="p-3.5 rounded-xl bg-white hover:bg-base-cream transition border border-olive-green/10 cursor-pointer shadow-sm">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-soft-yellow text-earth-brown mb-1">Panduan Kasih Sayang</span>
-                                <h4 class="text-xs md:text-sm font-bold text-deep-green">Kreasi Pangan Lokal Lezat & Bergizi Tinggi untuk Si Kecil</h4>
-                                <p class="text-xs text-earth-brown mt-1">Tim GO-Positif membagikan resep sederhana nan lezat agar si kecil antusias makan...</p>
-                            </article>
-
-                            <article class="p-3.5 rounded-xl bg-white hover:bg-base-cream transition border border-olive-green/10 cursor-pointer shadow-sm">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-soft-green text-deep-green mb-1">Kesehatan Keluarga</span>
-                                <h4 class="text-xs md:text-sm font-bold text-deep-green">Layanan Senyum Imunisasi & Suplementasi Vitamin A</h4>
-                                <p class="text-xs text-earth-brown mt-1">Dihimbau kepada seluruh orang tua membawa Buku KIA dengan senyuman hangat saat berkunjung...</p>
-                            </article>
-
-                            <article class="p-3.5 rounded-xl bg-white hover:bg-base-cream transition border border-olive-green/10 cursor-pointer shadow-sm">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-soft-yellow text-earth-brown mb-1">Penuh Perhatian</span>
-                                <h4 class="text-xs md:text-sm font-bold text-deep-green">Pemeriksaan Santai & Bebas Cemas Gula Darah Lansia</h4>
-                                <p class="text-xs text-earth-brown mt-1">Kerjasama santun Puskesmas Limbangan dengan Kader Posyandu untuk kenyamanan lansia...</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHART VISUALISASI KEHADIRAN -->
-                <div class="white-card p-5 sm:p-6 md:p-8 space-y-6">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-olive-green/10 pb-4">
+                <!-- ===== V8: VISI & MISI (1 BOX) ===== -->
+                <div class="white-card overflow-hidden" id="visi-misi">
+                    <div class="flex items-center gap-3 px-5 sm:px-6 py-4 text-white" style="background:linear-gradient(120deg,#1E4620,#3b6b2a 60%,#7C9246)">
+                        <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-compass text-sun-yellow text-xl"></i></div>
                         <div>
-                            <div class="flex flex-wrap items-center gap-2">
-                                <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl">Grafik Kehadiran & Kepedulian Warga Bulanan</h3>
-                                <span class="px-2.5 py-0.5 bg-soft-green text-deep-green text-xs font-bold rounded-full border border-olive-green/30">Visual Menentramkan</span>
-                            </div>
-                            <p class="text-xs text-earth-brown mt-1 font-medium">Visualisasi interaktif antusiasme & kebersamaan warga Gonoharjo menjaga kesehatan keluarga.</p>
+                            <h3 class="font-extrabold text-lg md:text-xl leading-tight">Visi &amp; Misi Utama</h3>
+                            <p class="text-xs text-white/85 font-medium">Arah dan komitmen GO-Positif Gonoharjo</p>
                         </div>
+                    </div>
+                    <div class="grid md:grid-cols-5">
+                        <div class="md:col-span-2 p-5 sm:p-6 bg-soft-green/70 md:border-r border-b md:border-b-0 border-olive-green/20 space-y-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-9 h-9 rounded-lg bg-white border border-olive-green/25 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-eye text-olive-green"></i></span>
+                                <h4 class="font-extrabold text-deep-green text-base md:text-lg uppercase tracking-wide">Visi Utama</h4>
+                            </div>
+                            <p class="text-sm md:text-base text-deep-green font-semibold leading-relaxed"><i class="fa-solid fa-quote-left text-olive-green/50 mr-1.5"></i>Terwujudnya GO-Positif Gonoharjo sebagai pusat pelayanan kesehatan terpadu berbasis masyarakat yang mandiri, berkualitas, handal, dan berorientasi pada pendampingan pencegahan penyakit secara penuh kasih sayang sepanjang siklus hidup.</p>
+                        </div>
+                        <div class="md:col-span-3 p-5 sm:p-6 space-y-3.5 bg-white">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-9 h-9 rounded-lg bg-soft-yellow border border-sun-yellow/40 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-bullseye text-sun-yellow"></i></span>
+                                <h4 class="font-extrabold text-deep-green text-base md:text-lg uppercase tracking-wide">Misi Utama</h4>
+                            </div>
+                            <ol class="space-y-3 text-sm text-earth-brown font-medium leading-relaxed">
+                                <li class="flex items-start gap-3"><span class="v8-num">1</span><span>Menyelenggarakan pendampingan tumbuh kembang balita secara intensif &amp; suportif untuk optimalisasi gizi anak.</span></li>
+                                <li class="flex items-start gap-3"><span class="v8-num">2</span><span>Meningkatkan kenyamanan &amp; cakupan skrining kesehatan dini bagi usia produktif dan lansia.</span></li>
+                                <li class="flex items-start gap-3"><span class="v8-num">3</span><span>Memperkuat integrasi teknologi informasi ramah pengguna dalam pendataan dan pelayanan Posyandu.</span></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="flex items-center space-x-2">
-                            <button onclick="toggleITConfigModal()" class="px-3.5 py-2 text-xs font-bold bg-base-cream text-earth-brown rounded-xl flex items-center space-x-1.5 border border-olive-green/20 hover:bg-white shadow-xs">
-                                <i class="fa-solid fa-sliders text-olive-green"></i>
-                                <span>Pengaturan Filter</span>
-                            </button>
+                <!-- ===== V8: JADWAL POSYANDU & ACARA KHUSUS ===== -->
+                <div class="white-card p-5 sm:p-6 space-y-5" id="jadwal-kegiatan">
+                    <div class="flex items-center justify-between gap-3 border-b border-olive-green/10 pb-3.5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-soft-yellow flex-shrink-0"><i class="fa-solid fa-calendar-days text-xl text-sun-yellow"></i></div>
+                            <div>
+                                <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl leading-tight">Jadwal Posyandu</h3>
+                                <p class="text-xs text-earth-brown font-medium">Warna kartu mengikuti nama Posyandu</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-soft-green text-deep-green border border-olive-green/30 flex-shrink-0">Bulan Ini</span>
+                    </div>
+                    <div id="jadwal-legend" class="flex flex-wrap gap-2"></div>
+                    <div class="grid lg:grid-cols-2 gap-5 lg:gap-6">
+                        <div>
+                            <h4 class="v8-sub"><i class="fa-regular fa-calendar-check"></i> Jadwal Posyandu Rutin</h4>
+                            <div id="jadwal-rutin" class="space-y-3"></div>
+                        </div>
+                        <div>
+                            <h4 class="v8-sub v8-sub-evt"><i class="fa-solid fa-wand-magic-sparkles"></i> Jadwal Posyandu Khusus / Acara Khusus</h4>
+                            <div id="jadwal-acara" class="space-y-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== V8: INFO & PENYULUHAN (isi sama dengan web Sasaran) ===== -->
+                <div class="white-card p-5 sm:p-6 space-y-4" id="info-penyuluhan">
+                    <div class="flex items-center justify-between gap-3 border-b border-olive-green/10 pb-3.5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-soft-green flex-shrink-0"><i class="fa-solid fa-bullhorn text-xl text-olive-green"></i></div>
+                            <div>
+                                <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl leading-tight">Info &amp; Penyuluhan</h3>
+                                <p class="text-xs text-earth-brown font-medium">Informasi layanan dan edukasi kesehatan terbaru</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-red-100 text-red-700 border border-red-200 flex-shrink-0"><i class="fa-solid fa-circle-exclamation mr-1"></i>Penting</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <article class="v8-info tone-pink">
+                            <div class="v8-info-ic"><i class="fa-solid fa-baby"></i></div>
+                            <div class="space-y-1.5 min-w-0">
+                                <span class="v8-chip">Edukasi Ibu &amp; Anak</span>
+                                <h4 class="font-extrabold text-deep-green text-sm md:text-base leading-snug">Pentingnya Vitamin A &amp; Obat Cacing Bulan Oktober</h4>
+                                <p class="text-xs md:text-sm text-earth-brown font-medium leading-relaxed">Dihimbau orang tua membawa balita sesuai jadwal kelompok posyandu masing-masing...</p>
+                            </div>
+                        </article>
+                        <article class="v8-info tone-violet">
+                            <div class="v8-info-ic"><i class="fa-solid fa-stethoscope"></i></div>
+                            <div class="space-y-1.5 min-w-0">
+                                <span class="v8-chip">Usia Produktif</span>
+                                <h4 class="font-extrabold text-deep-green text-sm md:text-base leading-snug">Skrining Dini Tekanan Darah &amp; Gula Darah Warga Desa</h4>
+                                <p class="text-xs md:text-sm text-earth-brown font-medium leading-relaxed">Layanan gratis cek tensi dan konsultasi kesehatan untuk pencegahan PTM...</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ===== V8: GRAFIK KEHADIRAN POSYANDU ===== -->
+                <div class="white-card p-5 sm:p-6 md:p-8 space-y-5" id="grafik-kehadiran">
+                    <div class="border-b border-olive-green/10 pb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl">Grafik Kehadiran Posyandu</h3>
+                            <span class="px-2.5 py-0.5 bg-soft-green text-deep-green text-xs font-bold rounded-full border border-olive-green/30">Data Interaktif</span>
+                        </div>
+                        <p class="text-xs text-earth-brown mt-1 font-medium">Pantau tingkat kehadiran warga berdasarkan rentang tanggal, nama Posyandu, dan kelompok sasaran.</p>
+                    </div>
+
+                    <div class="bg-base-cream p-3.5 sm:p-4 rounded-2xl border border-olive-green/15 space-y-3">
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                            <label class="v8-f"><span><i class="fa-regular fa-calendar mr-1"></i>Dari Tanggal</span>
+                                <input type="date" id="filter-dari" value="2026-05-01" onchange="updateChartData('dari')"></label>
+                            <label class="v8-f"><span><i class="fa-regular fa-calendar-check mr-1"></i>Sampai Tanggal</span>
+                                <input type="date" id="filter-sampai" value="2026-10-31" onchange="updateChartData('sampai')"></label>
+                            <label class="v8-f col-span-2 lg:col-span-1"><span><i class="fa-solid fa-house-medical mr-1"></i>Nama Posyandu</span>
+                                <select id="filter-posyandu" onchange="updateChartData()"><option value="semua">Semua Posyandu</option></select></label>
+                            <label class="v8-f col-span-2 lg:col-span-1"><span><i class="fa-solid fa-users mr-1"></i>Sasaran</span>
+                                <select id="filter-sasaran" onchange="updateChartData()">
+                                    <option value="semua">Semua Sasaran (Total)</option>
+                                    <option value="balita">Balita &amp; Baduta</option>
+                                    <option value="remaja">Remaja</option>
+                                    <option value="bumil">Ibu Hamil &amp; Menyusui</option>
+                                    <option value="produktif">Usia Produktif</option>
+                                    <option value="lansia">Lansia &amp; PTM</option>
+                                </select></label>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-[11px] text-earth-brown font-medium"><i class="fa-solid fa-heart text-olive-green mr-1"></i>Arahkan kursor / sentuh <b>titik grafik</b> untuk melihat angka.</span>
+                            <button type="button" onclick="resetChartFilter()" class="px-3 py-1.5 text-xs font-bold bg-white text-earth-brown rounded-xl border border-olive-green/25 hover:bg-soft-yellow"><i class="fa-solid fa-rotate-left mr-1 text-olive-green"></i>Atur Ulang</button>
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap gap-3 items-center justify-between bg-base-cream p-3.5 rounded-2xl border border-olive-green/10">
-                        <div class="flex flex-wrap gap-2.5 items-center text-xs w-full sm:w-auto">
-                            <div id="filter-box-tanggal" class="filter-item flex-1 sm:flex-initial">
-                                <select id="filter-tanggal" onchange="updateChartData()" class="w-full px-3 py-1.5 bg-white text-deep-green font-bold rounded-xl focus:outline-none cursor-pointer border border-olive-green/20">
-                                    <option value="all">Semua Tanggal</option>
-                                    <option value="1-10">Tgl 1 - 10</option>
-                                    <option value="11-20">Tgl 11 - 20</option>
-                                    <option value="21-31">Tgl 21 - 31</option>
-                                </select>
-                            </div>
-
-                            <div id="filter-box-bulan" class="filter-item flex-1 sm:flex-initial">
-                                <select id="filter-bulan" onchange="updateChartData()" class="w-full px-3 py-1.5 bg-white text-deep-green font-bold rounded-xl focus:outline-none cursor-pointer border border-olive-green/20">
-                                    <option value="2024">Semester 2 (2024)</option>
-                                    <option value="2023">Semester 1 (2024)</option>
-                                </select>
-                            </div>
-
-                            <div id="filter-box-sasaran" class="filter-item w-full sm:w-auto">
-                                <select id="filter-sasaran" onchange="updateChartData()" class="w-full px-3 py-1.5 bg-soft-green text-deep-green font-extrabold rounded-xl focus:outline-none cursor-pointer border border-olive-green/30">
-                                    <option value="semua">Semua Sasaran (Total)</option>
-                                    <option value="balita">Balita & Baduta</option>
-                                    <option value="remaja">Remaja</option>
-                                    <option value="bumil">Ibu Hamil & Menyusui</option>
-                                    <option value="produktif">Usia Produktif</option>
-                                    <option value="lansia">Lansia & PTM</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="text-[11px] text-earth-brown font-medium">
-                            <i class="fa-solid fa-heart text-olive-green mr-1"></i>Arahkan kursor pada <span class="font-bold">Titik Grafik</span> untuk statistik angka.
-                        </div>
+                    <div id="chart-stats" class="grid grid-cols-3 gap-2.5 sm:gap-3">
+                        <div class="v8-stat"><span>Rata-rata</span><b id="st-avg">-</b></div>
+                        <div class="v8-stat"><span>Tertinggi</span><b id="st-max">-</b></div>
+                        <div class="v8-stat"><span>Terakhir</span><b id="st-last">-</b></div>
                     </div>
 
                     <div class="w-full h-64 sm:h-72 md:h-80 relative">
                         <canvas id="kehadiranChart"></canvas>
+                        <div id="chart-empty" class="hidden absolute inset-0 flex items-center justify-center text-center text-sm font-bold text-earth-brown bg-white/85 rounded-xl p-4">Tidak ada data pada rentang tanggal ini. Silakan ubah tanggal.</div>
                     </div>
-                    
-                    <p class="text-center text-xs text-earth-brown font-medium italic">
-                        ✨ Catatan Kasih Sayang: Setiap kedatangan warga merupakan langkah nyata dalam menciptakan lingkungan sehat dan sejahtera bersama.
-                    </p>
+                    <p class="text-center text-xs text-earth-brown font-medium italic">✨ Setiap kedatangan warga adalah langkah nyata menciptakan lingkungan sehat bersama.</p>
                 </div>
 
-                <div class="white-card p-5 sm:p-6 space-y-6">
-                    <div class="flex items-center justify-between border-b border-olive-green/10 pb-3.5 gap-2">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-soft-yellow text-earth-brown font-bold flex-shrink-0">
-                                <i class="fa-solid fa-lightbulb text-lg text-sun-yellow"></i>
-                            </div>
-                            <h3 class="font-extrabold text-deep-green text-sm sm:text-base md:text-lg">Edukasi & Tips Kesehatan Penuh Kasih Sayang</h3>
-                        </div>
-                        <span class="text-xs text-olive-green font-bold flex-shrink-0">Suportif</span>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-                        <div class="p-4 rounded-xl bg-base-cream space-y-2 text-left border border-olive-green/10 hover:border-olive-green/30 transition">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-soft-yellow text-earth-brown">Pendampingan Tumbuh Kembang</span>
-                            <h4 class="font-bold text-sm text-deep-green">Optimalisasi Nutrisi Si Kecil dengan Isi Piringku</h4>
-                            <p class="text-xs text-earth-brown leading-relaxed font-medium">Pastikan asupan harian anak kaya akan protein hewani secara bertahap tanpa perlu membandingkan dengan anak lain.</p>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-base-cream space-y-2 text-left border border-olive-green/10 hover:border-sky-300 transition">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-sky-100 text-sky-800">Dukungan Remaja</span>
-                            <h4 class="font-bold text-sm text-deep-green">Remaja Putri Sehat, Ceria, & Percaya Diri</h4>
-                            <p class="text-xs text-earth-brown leading-relaxed font-medium">Jaga kebugaran dan kecukupan sel darah merah dengan minum Tablet Tambah Darah (TTD) teratur setiap minggu.</p>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-base-cream space-y-2 text-left border border-olive-green/10 hover:border-olive-green/30 transition">
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-soft-green text-deep-green">Kebahagiaan Lansia</span>
-                            <h4 class="font-bold text-sm text-deep-green">Menjaga Kebugaran & Ketenangan Usia Emas</h4>
-                            <p class="text-xs text-earth-brown leading-relaxed font-medium">Pemeriksaan santai tekanan darah, kurangi garam secara nyaman, dan lakukan jalan santai harian.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-12 gap-6">
-                    <div class="lg:col-span-7 white-card p-5 sm:p-6 space-y-4">
-                        <div class="flex items-center space-x-3 border-b border-olive-green/10 pb-3.5">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-soft-green text-deep-green font-bold flex-shrink-0">
-                                <i class="fa-solid fa-camera-retro text-lg text-olive-green"></i>
-                            </div>
-                            <h3 class="font-extrabold text-deep-green text-base sm:text-lg">Dokumentasi Kebersamaan Lapangan</h3>
-                        </div>
-
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
-                            <div class="p-1.5 rounded-2xl bg-base-cream overflow-hidden group cursor-pointer border border-olive-green/10">
-                                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 1" class="rounded-xl w-full h-28 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/400x300/FAF7F0/1E4620?text=Pendampingan+Balita'">
-                                <p class="text-[10px] text-center text-earth-brown font-extrabold mt-1.5">Pemeriksaan Santun Balita</p>
-                            </div>
-                            <div class="p-1.5 rounded-2xl bg-base-cream overflow-hidden group cursor-pointer border border-olive-green/10">
-                                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 2" class="rounded-xl w-full h-28 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/400x300/FAF7F0/1E4620?text=Skrining+Lansia'">
-                                <p class="text-[10px] text-center text-earth-brown font-extrabold mt-1.5">Skrining Ramah Lansia</p>
-                            </div>
-                            <div class="p-1.5 rounded-2xl bg-base-cream overflow-hidden group cursor-pointer border border-olive-green/10 col-span-2 sm:col-span-1">
-                                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=400&q=80" alt="Dokumentasi 3" class="rounded-xl w-full h-28 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/400x300/FAF7F0/1E4620?text=Pemberian+PMT'">
-                                <p class="text-[10px] text-center text-earth-brown font-extrabold mt-1.5">Kebersamaan PMT Lokal</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 white-card p-5 sm:p-6 space-y-4">
-                        <div class="flex items-center space-x-3 border-b border-olive-green/10 pb-3.5">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-red-100 text-red-600 font-bold flex-shrink-0">
-                                <i class="fa-brands fa-youtube text-lg"></i>
-                            </div>
+                <!-- ===== V8: EDUKASI & TIPS PENUH KASIH SAYANG ===== -->
+                <div class="white-card overflow-hidden" id="edukasi-tips">
+                    <div class="v8-edu-hero">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hand-holding-heart text-2xl text-white"></i></div>
                             <div>
-                                <h3 class="font-extrabold text-deep-green text-sm sm:text-base">Media Edukasi YouTube</h3>
-                                <p class="text-[11px] text-earth-brown font-medium">Klik untuk memutar tayangan ramah</p>
+                                <h3 class="font-extrabold text-lg sm:text-xl md:text-2xl leading-tight">Edukasi &amp; Tips Penuh Kasih Sayang</h3>
+                                <p class="text-xs sm:text-sm text-white/90 font-medium">Pesan sederhana, dari hati, untuk setiap keluarga Gonoharjo 💛</p>
                             </div>
                         </div>
+                        <div class="v8-tip-today">
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span class="text-[11px] font-extrabold tracking-wider uppercase text-rose-700"><i class="fa-solid fa-heart mr-1"></i>Tip Hari Ini</span>
+                                <button type="button" onclick="nextTip()" class="px-3 py-1.5 rounded-full text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 flex items-center gap-1.5"><i class="fa-solid fa-shuffle"></i>Tip Berikutnya</button>
+                            </div>
+                            <div id="tip-today" class="flex items-start gap-3"></div>
+                        </div>
+                    </div>
+                    <div id="edu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 p-5 sm:p-6"></div>
+                </div>
 
-                        <div id="youtube-facade" class="relative rounded-2xl overflow-hidden bg-stone-900 aspect-video flex items-center justify-center group cursor-pointer" onclick="loadYoutubeVideo()">
-                            <img src="https://img.youtube.com/vi/FSqc9qFuqVM/hqdefault.jpg" alt="YouTube Preview" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300" onerror="this.src='https://placehold.co/600x350/1E4620/ffffff?text=Video+GO-Positif+Gonoharjo'">
-                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
+                <!-- ===== V8: DOKUMENTASI KEBERSAMAAN LAPANGAN ===== -->
+                <div class="white-card p-5 sm:p-6 space-y-5" id="dokumentasi">
+                    <div class="flex items-center gap-3 border-b border-olive-green/10 pb-3.5">
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-soft-green flex-shrink-0"><i class="fa-solid fa-camera-retro text-xl text-olive-green"></i></div>
+                        <div>
+                            <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl leading-tight">Dokumentasi Kebersamaan Lapangan</h3>
+                            <p class="text-xs text-earth-brown font-medium">Sentuh foto untuk memperbesar dan membaca keterangannya</p>
+                        </div>
+                    </div>
+                    <div id="doc-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+                </div>
 
-                            <button class="relative z-10 w-14 h-14 bg-red-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition border-2 border-white/80 shadow-lg">
-                                <i class="fa-solid fa-play text-xl ml-1"></i>
-                            </button>
-
-                            <span class="absolute bottom-3 left-3 bg-deep-green/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md backdrop-blur">
-                                ▶ GO-POSITIF DESA GONOHARJO
-                            </span>
+                <!-- ===== V8: MEDIA EDUKASI YOUTUBE ===== -->
+                <div class="white-card p-5 sm:p-6 space-y-5" id="media-youtube">
+                    <div class="flex items-center gap-3 border-b border-olive-green/10 pb-3.5">
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-red-100 text-red-600 flex-shrink-0"><i class="fa-brands fa-youtube text-xl"></i></div>
+                        <div>
+                            <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl leading-tight">Media Edukasi YouTube</h3>
+                            <p class="text-xs text-earth-brown font-medium">Klik untuk memutar tayangan ramah keluarga</p>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-12 gap-5 items-stretch">
+                        <div class="lg:col-span-7">
+                            <div id="youtube-facade" class="relative rounded-2xl overflow-hidden bg-stone-900 aspect-video flex items-center justify-center group cursor-pointer shadow-lg" onclick="loadYoutubeVideo()">
+                                <img src="https://img.youtube.com/vi/FSqc9qFuqVM/hqdefault.jpg" alt="Pratinjau video YouTube Posyandu Desa Gonoharjo" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300" onerror="this.src='https://placehold.co/600x350/1E4620/ffffff?text=Video+GO-Positif+Gonoharjo'">
+                                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
+                                <button type="button" aria-label="Putar video" class="relative z-10 w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition border-2 border-white/80 shadow-lg"><i class="fa-solid fa-play text-2xl ml-1"></i></button>
+                                <span class="absolute bottom-3 left-3 bg-deep-green/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur">▶ GO-POSITIF DESA GONOHARJO</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 v8-yt-card">
+                            <div class="flex items-center gap-3">
+                                <span class="v8-yt-logo"><i class="fa-brands fa-youtube"></i></span>
+                                <span class="text-[11px] font-extrabold tracking-widest uppercase text-white/90">Kanal Resmi</span>
+                            </div>
+                            <h4 class="font-black text-xl sm:text-2xl leading-tight">SUBSCRIBE<br>YT POSYANDU DESA GONOHARJO</h4>
+                            <p class="text-sm text-white/90 font-medium leading-relaxed">Dapatkan video edukasi kesehatan keluarga, kegiatan Posyandu, dan tips hidup sehat terbaru. Jangan lupa tekan lonceng 🔔</p>
+                            <a href="https://youtube.com/@posyandudesagonoharjo?si=jnOAf1kJcyfHYz1g" target="_blank" rel="noopener noreferrer" class="v8-yt-btn"><i class="fa-brands fa-youtube text-lg"></i><span>SUBSCRIBE SEKARANG</span><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                            <p class="text-[11px] text-white/80 font-semibold break-all">youtube.com/@posyandudesagonoharjo</p>
                         </div>
                     </div>
                 </div>
@@ -1437,36 +1442,15 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
         </div>
     </div>
     <!-- MODAL PENGATURAN FILTER (IT CONTROL PANEL) -->
-    <div id="modal-it-config" class="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="white-card p-6 max-w-md w-full bg-[#FAF7F0] space-y-4 border-2 border-olive-green/30 shadow-2xl">
-            <div class="flex items-center justify-between border-b border-olive-green/10 pb-3">
-                <div class="flex items-center space-x-2">
-                    <i class="fa-solid fa-shield-halved text-deep-green"></i>
-                    <h3 class="font-extrabold text-deep-green text-base">Pengaturan Filter Grafik</h3>
-                </div>
-                <button onclick="toggleITConfigModal()" class="text-earth-brown hover:text-deep-green text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <p class="text-xs text-earth-brown font-medium">Filter diagram mana yang aktif:</p>
-            
-            <div class="space-y-3 text-xs font-semibold text-deep-green">
-                <label class="flex items-center justify-between p-3 rounded-xl bg-white border border-olive-green/20 cursor-pointer shadow-xs">
-                    <span>Filter Tanggal</span>
-                    <input type="checkbox" id="toggle-tanggal" checked onchange="toggleFilterVisibility('tanggal')" class="w-4 h-4 text-olive-green rounded">
-                </label>
-                <label class="flex items-center justify-between p-3 rounded-xl bg-white border border-olive-green/20 cursor-pointer shadow-xs">
-                    <span>Filter Bulan / Semester</span>
-                    <input type="checkbox" id="toggle-bulan" checked onchange="toggleFilterVisibility('bulan')" class="w-4 h-4 text-olive-green rounded">
-                </label>
-                <label class="flex items-center justify-between p-3 rounded-xl bg-white border border-olive-green/20 cursor-pointer shadow-xs">
-                    <span>Filter Kategori Sasaran</span>
-                    <input type="checkbox" id="toggle-sasaran" checked onchange="toggleFilterVisibility('sasaran')" class="w-4 h-4 text-olive-green rounded">
-                </label>
-            </div>
-
-            <div class="pt-2 text-right">
-                <button onclick="toggleITConfigModal()" class="btn-primary px-4 py-2 font-bold text-xs shadow-md">Simpan Pengaturan</button>
+    <!-- V8: LIGHTBOX DOKUMENTASI -->
+    <div id="v8-lightbox" class="hidden fixed inset-0 bg-black/85 items-center justify-center p-3 sm:p-6" style="z-index:9995" role="dialog" aria-modal="true" aria-label="Foto dokumentasi" onclick="if(event.target===this)closeDocLightbox()">
+        <div class="relative w-full max-w-4xl flex flex-col rounded-2xl overflow-hidden bg-white shadow-2xl" style="max-height:92dvh">
+            <button type="button" onclick="closeDocLightbox()" aria-label="Tutup" class="absolute top-3 right-3 z-10 w-11 h-11 rounded-full bg-black/60 text-white text-lg flex items-center justify-center hover:bg-black/80"><i class="fa-solid fa-xmark"></i></button>
+            <img id="v8-lb-img" src="" alt="" class="w-full object-contain bg-black" style="max-height:62dvh">
+            <div class="p-4 sm:p-5 space-y-1.5 overflow-y-auto">
+                <span id="v8-lb-chip" class="v8-chip"></span>
+                <h4 id="v8-lb-title" class="font-extrabold text-deep-green text-lg sm:text-xl"></h4>
+                <p id="v8-lb-desc" class="text-sm sm:text-base text-earth-brown font-medium leading-relaxed"></p>
             </div>
         </div>
     </div>
@@ -1534,31 +1518,10 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
 
         </div>
 
-        <!-- PENGEMBANG SISTEM & DISKLAIMER -->
-<div class="max-w-7xl mx-auto py-6 border-b border-olive-green/10">
-    <div class="rounded-2xl border border-olive-green/20 bg-soft-green/60 p-4 sm:p-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-        <div class="flex items-center gap-3 md:w-72 lg:w-80 flex-shrink-0">
-            <div class="w-11 h-11 rounded-xl bg-deep-green text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                <i class="fa-solid fa-code text-sm"></i>
-            </div>
-            <div class="min-w-0">
-                <h4 class="font-extrabold text-sm text-deep-green">Pengembang Sistem</h4>
-                <span class="text-[10px] font-black text-deep-green uppercase tracking-wider block">Inovasi Digital Posyandu</span>
-                <p class="font-extrabold text-earth-brown text-xs break-words">@KreasiCahNdeso</p>
-                <p class="text-[10px] text-earth-brown/70 font-medium leading-snug">Sistem Informasi Posyandu ILP Desa Gonoharjo</p>
-            </div>
+        <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-earth-brown font-medium gap-2 text-center sm:text-left">
+            <p>© 2026 GO-POSITIF by KreasiCahNdeso. All rights reserved.</p>
+            <p class="text-olive-green font-bold">Kecamatan Limbangan, Kabupaten Kendal</p>
         </div>
-        <div class="min-w-0 md:flex-1 md:border-l md:border-olive-green/25 md:pl-6 pt-4 md:pt-0 border-t border-olive-green/20 md:border-t-0">
-            <p class="text-[11px] sm:text-xs font-extrabold text-deep-green mb-1">© 2026 GO-POSITIF by @KreasiCahNdeso</p>
-            <p class="text-[11px] sm:text-xs text-earth-brown/80 font-medium leading-relaxed">Murni dikembangkan untuk kemajuan digitalisasi akses di desa secara mandiri, non-komersial, non-politis, dan tidak dapat diklaim atau direplikasi oleh pihak manapun tanpa izin tertulis dari pemilik @KreasiCahNdeso.</p>
-        </div>
-    </div>
-</div>
-
-<div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-earth-brown font-medium gap-1 sm:gap-2 text-center sm:text-left">
-    <p>All rights reserved.</p>
-    <p class="text-olive-green font-bold">Kecamatan Limbangan, Kabupaten Kendal, Jawa Tengah</p>
-</div>
     </footer>
 
     <!-- LOGIKA JAVASCRIPT & MODUL INTERAKSI UTUH -->
@@ -1987,80 +1950,64 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
         }
 
         let kehadiranChart;
+        /* DATA CONTOH: ganti dengan data kehadiran sebenarnya (persentase per bulan) */
+        const V8_BULAN=[['2026-05','Mei'],['2026-06','Jun'],['2026-07','Jul'],['2026-08','Agu'],['2026-09','Sep'],['2026-10','Okt']];
+        const V8_BASE={semua:[78,82,85,88,92,95],balita:[85,88,90,92,94,98],remaja:[65,70,72,78,80,85],bumil:[90,92,91,95,96,97],produktif:[60,68,72,75,82,84],lansia:[80,83,85,87,89,91]};
+        const V8_OFFSET={semua:0,dusun:2,balai:-2,posko:-4};
+        function v8Rgba(hex,a){const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;}
         function initChart() {
             const canvasEl = document.getElementById('kehadiranChart');
-            if(!canvasEl) return;
-            const ctx = canvasEl.getContext('2d');
-            
-            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-            gradient.addColorStop(0, 'rgba(124, 146, 70, 0.40)');
-            gradient.addColorStop(1, 'rgba(124, 146, 70, 0.0)');
-
-            kehadiranChart = new Chart(ctx, {
+            if(!canvasEl || typeof Chart === 'undefined') return;
+            kehadiranChart = new Chart(canvasEl.getContext('2d'), {
                 type: 'line',
-                data: {
-                    labels: ['Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt'],
-                    datasets: [{
-                        label: 'Persentase Partisipasi Warga (%)',
-                        data: [78, 82, 85, 88, 92, 95],
-                        borderColor: '#1E4620',
-                        borderWidth: 3,
-                        backgroundColor: gradient,
-                        fill: true,
-                        tension: 0.35,
-                        pointBackgroundColor: '#7C9246',
-                        pointBorderColor: '#ffffff',
-                        pointBorderWidth: 3,
-                        pointRadius: 6,
-                        pointHoverRadius: 9
-                    }]
-                },
+                data: { labels: [], datasets: [{ label: '', data: [], borderColor: '#1E4620', borderWidth: 3, backgroundColor: 'rgba(30,70,32,0.12)', fill: true, tension: 0.35, pointBackgroundColor: '#7C9246', pointBorderColor: '#ffffff', pointBorderWidth: 3, pointRadius: 6, pointHoverRadius: 9 }] },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     plugins: {
                         legend: { display: true, position: 'top' },
-                        tooltip: {
-                            backgroundColor: '#1E4620',
-                            titleFont: { size: 12, weight: 'bold' },
-                            bodyFont: { size: 12 },
-                            padding: 10,
-                            displayColors: false,
-                            callbacks: {
-                                label: function(context) {
-                                    return `Tingkat Kehadiran & Kepedulian: ${context.raw}% Sasaran`;
-                                }
-                            }
-                        }
+                        tooltip: { backgroundColor: '#1E4620', titleFont: { size: 13, weight: 'bold' }, bodyFont: { size: 13 }, padding: 10, displayColors: false,
+                            callbacks: { label: c => `Kehadiran: ${c.raw}%` } }
                     },
-                    scales: {
-                        y: {
-                            min: 50,
-                            max: 100,
-                            grid: { color: 'rgba(124, 146, 70, 0.15)' },
-                            ticks: { callback: value => value + '%' }
-                        },
-                        x: {
-                            grid: { display: false }
-                        }
-                    }
+                    scales: { y: { min: 50, max: 100, grid: { color: 'rgba(124, 146, 70, 0.15)' }, ticks: { callback: v => v + '%' } }, x: { grid: { display: false } } }
                 }
             });
+            updateChartData();
         }
 
-        function updateChartData() {
+        function updateChartData(src) {
             if(!kehadiranChart) return;
-            const sasaran = document.getElementById('filter-sasaran').value;
-            
-            let newData = [78, 82, 85, 88, 92, 95];
-            if(sasaran === 'balita') newData = [85, 88, 90, 92, 94, 98];
-            if(sasaran === 'remaja') newData = [65, 70, 72, 78, 80, 85];
-            if(sasaran === 'bumil') newData = [90, 92, 91, 95, 96, 97];
-            if(sasaran === 'produktif') newData = [60, 68, 72, 75, 82, 84];
-            if(sasaran === 'lansia') newData = [80, 83, 85, 87, 89, 91];
-
-            kehadiranChart.data.datasets[0].data = newData;
+            const $ = id => document.getElementById(id);
+            let dari = $('filter-dari').value, sampai = $('filter-sampai').value;
+            if(dari && sampai && dari > sampai){ if(src === 'dari') sampai = dari; else dari = sampai; $('filter-dari').value = dari; $('filter-sampai').value = sampai; }
+            const sasaran = $('filter-sasaran').value, pid = $('filter-posyandu').value;
+            const off = V8_OFFSET[pid] || 0;
+            const rows = V8_BULAN.map((b, i) => {
+                const [y, m] = b[0].split('-').map(Number);
+                const awal = b[0] + '-01', akhir = b[0] + '-' + String(new Date(y, m, 0).getDate()).padStart(2, '0');
+                const ok = (!dari || akhir >= dari) && (!sampai || awal <= sampai);
+                return ok ? { l: b[1] + ' ' + y, v: Math.min(100, Math.max(50, V8_BASE[sasaran][i] + off)) } : null;
+            }).filter(Boolean);
+            const P = (window.POSYANDU || []).find(p => p.id === pid);
+            const warna = P ? V8_TONE[P.tone] : '#1E4620';
+            const ds = kehadiranChart.data.datasets[0];
+            kehadiranChart.data.labels = rows.map(r => r.l);
+            ds.data = rows.map(r => r.v);
+            ds.label = 'Kehadiran ' + (P ? P.nama : 'Semua Posyandu') + ' — ' + $('filter-sasaran').selectedOptions[0].text + ' (%)';
+            ds.borderColor = warna; ds.backgroundColor = v8Rgba(warna, 0.14); ds.pointBackgroundColor = warna;
             kehadiranChart.update();
+            $('chart-empty').classList.toggle('hidden', rows.length > 0);
+            const vals = ds.data;
+            $('st-avg').textContent = vals.length ? Math.round(vals.reduce((a, b) => a + b, 0) / vals.length) + '%' : '-';
+            $('st-max').textContent = vals.length ? Math.max(...vals) + '%' : '-';
+            $('st-last').textContent = vals.length ? vals[vals.length - 1] + '%' : '-';
+        }
+
+        function resetChartFilter() {
+            document.getElementById('filter-dari').value = '2026-05-01';
+            document.getElementById('filter-sampai').value = '2026-10-31';
+            document.getElementById('filter-posyandu').value = 'semua';
+            document.getElementById('filter-sasaran').value = 'semua';
+            updateChartData();
         }
 
         function toggleITConfigModal() {
@@ -2331,6 +2278,95 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers
   },{passive:true});
   document.addEventListener('pointerleave',()=>{if(last){off(last);last=null;}});
 }
+})();
+</script>
+<script id="v8-js">
+/* ===== V8: DATA & RENDER BERANDA =====
+   Edit data di bagian atas ini saja (nama Posyandu, jadwal, acara, tips, foto). */
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* 1) NAMA POSYANDU + WARNA (tone: green, sky, amber, pink, violet, rose) */
+window.POSYANDU=[
+ {id:'dusun',nama:'Posyandu Dusun Gonoharjo',tone:'green'},
+ {id:'balai',nama:'Posyandu Balai Desa',tone:'sky'},
+ {id:'posko',nama:'Posyandu Posko RT 05',tone:'amber'}
+];
+window.V8_TONE={green:'#2E7D32',sky:'#0284C7',amber:'#D97706',pink:'#DB2777',violet:'#7C3AED',rose:'#E11D48'};
+const PZ=Object.fromEntries(POSYANDU.map(p=>[p.id,p]));
+
+/* 2) JADWAL RUTIN */
+const JADWAL=[
+ {p:'dusun',hari:'12',bln:'OKT',judul:'Posyandu Balita & Pendampingan Tumbuh Kembang',sub:'Kami menantikan kehadiran buah hati & bunda',jam:'08.00 - 11.30 WIB',tempat:'Dusun Gonoharjo RT 02 / RW 01'},
+ {p:'balai',hari:'18',bln:'OKT',judul:'Posyandu Remaja & Edukasi Nutrisi Diri',sub:'Ruang ceria & pendampingan remaja sehat',jam:'14.00 - 16.30 WIB',tempat:'Balai Desa Gonoharjo'},
+ {p:'posko',hari:'25',bln:'OKT',judul:'Posyandu Lansia & Skrining Kebugaran Usia Emas',sub:'Silaturahmi & pemeriksaan kesehatan lansia',jam:'08.30 - 12.00 WIB',tempat:'Posko Kesehatan RT 05'}
+];
+/* 3) ACARA KHUSUS (contoh — ganti sesuai kegiatan sebenarnya). v:'a' ungu-pink, 'b' oranye-merah */
+const ACARA=[
+ {p:'dusun',v:'a',icon:'fa-capsules',judul:'Bulan Vitamin A & Obat Cacing',desk:'Pemberian Vitamin A dan obat cacing gratis untuk balita. Jangan lupa bawa Buku KIA.',hari:'20',bln:'OKT',jam:'08.00 - 11.00 WIB',tempat:'Dusun Gonoharjo RT 02 / RW 01'},
+ {p:'posko',v:'b',icon:'fa-person-walking',judul:'Senam Sehat & Jalan Santai Lansia',desk:'Senam bersama, cek tensi gratis, dan door prize untuk lansia Gonoharjo.',hari:'28',bln:'OKT',jam:'06.30 - 09.00 WIB',tempat:'Posko Kesehatan RT 05'}
+];
+/* 4) TIPS EDUKASI */
+const TIPS=[
+ {tone:'green',icon:'fa-bowl-rice',tag:'Pendampingan Tumbuh Kembang',judul:'Optimalisasi Nutrisi Si Kecil dengan Isi Piringku',teks:'Pastikan asupan harian anak kaya akan protein hewani secara bertahap tanpa perlu membandingkan dengan anak lain.',untuk:'Untuk Bunda & Balita'},
+ {tone:'sky',icon:'fa-heart-pulse',tag:'Dukungan Remaja',judul:'Remaja Putri Sehat, Ceria, & Percaya Diri',teks:'Jaga kebugaran dan kecukupan sel darah merah dengan minum Tablet Tambah Darah (TTD) teratur setiap minggu.',untuk:'Untuk Remaja Putri'},
+ {tone:'amber',icon:'fa-person-walking',tag:'Kebahagiaan Lansia',judul:'Menjaga Kebugaran & Ketenangan Usia Emas',teks:'Pemeriksaan santai tekanan darah, kurangi garam secara nyaman, dan lakukan jalan santai harian.',untuk:'Untuk Ayah & Ibu Lansia'},
+ {tone:'pink',icon:'fa-baby',tag:'Ibu Hamil & Menyusui',judul:'ASI Eksklusif, Pelukan Pertama untuk Si Kecil',teks:'Periksakan kehamilan rutin ke Bidan Desa dan ikuti kelas pendampingan ASI Eksklusif di Posyandu.',untuk:'Untuk Bumil & Busui'},
+ {tone:'violet',icon:'fa-heart-circle-check',tag:'Usia Produktif',judul:'Kenali G4G1L5, Sayangi Tubuh Sendiri',teks:'Batasi gula 4 sendok makan, garam 1 sendok teh, dan minyak 5 sendok makan per hari. Cek tensi & gula darah berkala.',untuk:'Untuk Ayah & Bunda'},
+ {tone:'rose',icon:'fa-book-medical',tag:'Kesehatan Keluarga',judul:'Buku KIA, Catatan Cinta Tumbuh Kembang',teks:'Bawa Buku KIA setiap ke Posyandu agar perkembangan buah hati tercatat rapi dan mudah dipantau bersama Kader & Bidan.',untuk:'Untuk Seluruh Keluarga'}
+];
+/* 5) FOTO DOKUMENTASI */
+const DOK=[
+ {tone:'green',tag:'Balita',judul:'Pemeriksaan Santun Balita',desk:'Kader menimbang dan mengukur tumbuh kembang balita dengan ramah, sabar, dan penuh senyum.',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',ph:'Pendampingan+Balita'},
+ {tone:'amber',tag:'Lansia',judul:'Skrining Ramah Lansia',desk:'Cek tekanan darah dan gula darah lansia secara santai di Posko Kesehatan.',img:'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',ph:'Skrining+Lansia'},
+ {tone:'rose',tag:'PMT Lokal',judul:'Kebersamaan PMT Lokal',desk:'Pemberian makanan tambahan berbahan pangan lokal bersama orang tua dan kader.',img:'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80',ph:'Pemberian+PMT'}
+];
+
+/* ---------- RENDER ---------- */
+$('jadwal-legend').innerHTML=POSYANDU.map(p=>`<span class="v8-leg tone-${p.tone}"><i></i>${esc(p.nama)}</span>`).join('');
+$('jadwal-rutin').innerHTML=JADWAL.map(j=>{const p=PZ[j.p];return `<article class="sch-card tone-${p.tone}">
+ <div class="sch-date"><b>${j.hari}</b><small>${j.bln}</small></div>
+ <div class="min-w-0"><span class="sch-pn">${esc(p.nama)}</span>
+ <h5>${esc(j.judul)}</h5>
+ <p class="text-xs font-semibold" style="color:var(--c)">${esc(j.sub)}</p>
+ <div class="sch-meta"><span><i class="fa-regular fa-clock"></i>${esc(j.jam)}</span><span><i class="fa-solid fa-location-dot"></i>${esc(j.tempat)}</span></div></div></article>`}).join('');
+$('jadwal-acara').innerHTML=ACARA.map(a=>{const p=PZ[a.p];return `<article class="evt-card ${a.v==='b'?'b':''} tone-${p.tone}">
+ <div class="evt-ic"><i class="fa-solid ${a.icon}"></i></div>
+ <div class="min-w-0 flex-1"><span class="evt-badge"><i class="fa-solid fa-star"></i>Acara Khusus</span>
+ <h5>${esc(a.judul)}</h5><p>${esc(a.desk)}</p>
+ <div class="evt-meta"><span class="evt-pill"><i class="fa-regular fa-calendar mr-1"></i>${a.hari} ${a.bln}</span><span class="evt-pill"><i class="fa-regular fa-clock mr-1"></i>${esc(a.jam)}</span><span class="evt-pill"><i class="fa-solid fa-location-dot mr-1"></i>${esc(a.tempat)}</span><span class="evt-pill pn">${esc(p.nama)}</span></div></div></article>`}).join('');
+
+$('filter-posyandu').insertAdjacentHTML('beforeend',POSYANDU.map(p=>`<option value="${p.id}">${esc(p.nama)}</option>`).join(''));
+
+$('edu-grid').innerHTML=TIPS.map(t=>`<article class="edu-card tone-${t.tone}">
+ <div class="edu-top"><div class="edu-ic"><i class="fa-solid ${t.icon}"></i></div><span class="v8-chip">${esc(t.tag)}</span></div>
+ <h4>${esc(t.judul)}</h4><p>${esc(t.teks)}</p>
+ <div class="edu-foot"><i class="fa-solid fa-heart"></i>${esc(t.untuk)}</div></article>`).join('');
+let ti=new Date().getDate()%TIPS.length;
+window.nextTip=function(first){
+ if(first!==true)ti=(ti+1)%TIPS.length;
+ const t=TIPS[ti];
+ $('tip-today').innerHTML=`<div class="edu-ic tone-${t.tone}" style="width:2.9rem;height:2.9rem;font-size:1.25rem"><i class="fa-solid ${t.icon}"></i></div>
+ <div class="min-w-0"><h4 class="font-extrabold text-deep-green text-sm sm:text-base leading-snug">${esc(t.judul)}</h4><p class="text-xs sm:text-sm font-medium leading-relaxed mt-1">${esc(t.teks)}</p></div>`;
+};
+nextTip(true);
+
+$('doc-grid').innerHTML=DOK.map((d,i)=>`<button type="button" class="doc-card tone-${d.tone}" onclick="openDocLightbox(${i})" aria-label="Perbesar foto: ${esc(d.judul)}">
+ <div class="doc-img"><img src="${d.img}" alt="${esc(d.judul)}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x600/FAF7F0/1E4620?text=${d.ph}'"><span class="v8-chip">${esc(d.tag)}</span><span class="doc-zoom"><i class="fa-solid fa-expand"></i></span></div>
+ <div class="doc-cap"><h4>${esc(d.judul)}</h4><p>${esc(d.desk)}</p></div></button>`).join('');
+window.openDocLightbox=function(i){
+ const d=DOK[i],lb=$('v8-lightbox');if(!d||!lb)return;
+ $('v8-lb-img').src=d.img;$('v8-lb-img').alt=d.judul;
+ $('v8-lb-img').onerror=function(){this.onerror=null;this.src='https://placehold.co/800x600/FAF7F0/1E4620?text='+d.ph;};
+ $('v8-lb-chip').textContent=d.tag;$('v8-lb-title').textContent=d.judul;$('v8-lb-desc').textContent=d.desk;
+ lb.className=lb.className.replace(/\bhidden\b/,'flex');document.documentElement.classList.add('v7-lock');
+};
+window.closeDocLightbox=function(){
+ const lb=$('v8-lightbox');if(!lb)return;
+ lb.className=lb.className.replace(/\bflex\b/,'hidden');document.documentElement.classList.remove('v7-lock');
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDocLightbox();});
 })();
 </script>
 </body>
