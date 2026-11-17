@@ -311,72 +311,79 @@ main input:focus,main select:focus,main textarea:focus{outline:none;box-shadow:0
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 <style id="v8-style">
-/* ===== V8: WARNA, KOMPONEN BARU & RESPONSIF ===== */
-.tone-green{--c:#2E7D32;--d:#1B5E20;--b:#E8F5E9}.tone-sky{--c:#0284C7;--d:#075985;--b:#E0F2FE}
-.tone-amber{--c:#D97706;--d:#92400E;--b:#FEF3C7}.tone-pink{--c:#DB2777;--d:#9D174D;--b:#FCE7F3}
-.tone-violet{--c:#7C3AED;--d:#5B21B6;--b:#EDE9FE}.tone-rose{--c:#E11D48;--d:#9F1239;--b:#FFE4E6}
-.v8-num{width:1.85rem;height:1.85rem;border-radius:9999px;background:var(--sun-yellow);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 0 #c9852f}
+/* ===== V9: PALET SOFT PASTEL SELARAS TEMA (krim, olive, kuning lembut) ===== */
+.tone-green{--c:#7C9246;--d:#3F5A1F;--b:#F3F7EA;--m:#DDE8C6}
+.tone-sky{--c:#6BA7C4;--d:#2F5F7A;--b:#EEF6FA;--m:#D3E7F1}
+.tone-amber{--c:#E0A24E;--d:#7A4B12;--b:#FEF6EA;--m:#F8E3BF}
+.tone-pink{--c:#D98BA3;--d:#8A3A55;--b:#FCF0F4;--m:#F5D9E2}
+.tone-violet{--c:#9C8CC9;--d:#54448A;--b:#F4F1FB;--m:#E0D9F1}
+.tone-rose{--c:#D9867F;--d:#8A3B34;--b:#FDF1EE;--m:#F6D9D4}
+.v8-num{width:1.85rem;height:1.85rem;border-radius:9999px;background:#FBE3BE;color:#5A3B21;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #EBC48A;box-shadow:0 2px 0 #EBC48A}
 .v8-sub{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:.9rem;color:var(--deep-green);margin-bottom:.75rem}
-.v8-sub i{color:var(--olive-green)}.v8-sub-evt i{color:#DB2777}
-.v8-chip{display:inline-block;padding:.15rem .65rem;border-radius:9999px;font-size:.72rem;font-weight:800;background:var(--b,#EBF2DF);color:var(--d,#1E4620);border:1px solid var(--c,#7C9246)}
-.v8-leg{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:9999px;background:var(--b);color:var(--d);font-weight:800;font-size:.78rem;border:1.5px solid var(--c)}
-.v8-leg i{width:.65rem;height:.65rem;border-radius:9999px;background:var(--c);display:inline-block}
-/* kartu jadwal rutin (warna sesuai nama posyandu) */
-.sch-card{display:flex;gap:.85rem;align-items:stretch;padding:.75rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 75%);border:1px solid var(--b);border-left:7px solid var(--c);box-shadow:0 6px 14px -8px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
-.sch-card:hover{transform:translateY(-2px);box-shadow:0 12px 20px -10px rgba(0,0,0,.3)}
-.sch-date{min-width:4.1rem;border-radius:14px;background:var(--c);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.4rem .3rem;box-shadow:0 3px 0 var(--d)}
+.v8-sub i{color:var(--olive-green)}.v8-sub-evt i{color:#E0A24E}
+.v8-chip{display:inline-block;padding:.15rem .65rem;border-radius:9999px;font-size:.72rem;font-weight:800;background:var(--m,#EBF2DF);color:var(--d,#1E4620);border:1px solid var(--c,#7C9246)}
+.v8-leg{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;border-radius:9999px;background:var(--b);color:var(--d);font-weight:800;font-size:.78rem;border:1.5px solid var(--m)}
+.v8-leg i{width:.7rem;height:.7rem;border-radius:9999px;background:var(--c);display:inline-block}
+/* jadwal rutin: pastel sesuai nama posyandu */
+.sch-card{display:flex;gap:.85rem;align-items:stretch;padding:.75rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 80%);border:1px solid var(--m);border-left:6px solid var(--c);box-shadow:0 5px 12px -8px rgba(90,59,33,.25);transition:transform .2s,box-shadow .2s}
+.sch-card:hover{transform:translateY(-2px);box-shadow:0 10px 18px -10px rgba(90,59,33,.3)}
+.sch-date{min-width:4.1rem;border-radius:14px;background:var(--m);color:var(--d);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.4rem .3rem;border:1px solid var(--c);box-shadow:0 2px 0 var(--c)}
 .sch-date b{font-size:1.65rem;line-height:1;font-weight:900;font-family:Quicksand,sans-serif}.sch-date small{font-size:.72rem;font-weight:800;letter-spacing:.08em;margin-top:.15rem}
-.sch-pn{display:inline-block;background:var(--c);color:#fff;font-weight:800;font-size:.72rem;padding:.15rem .65rem;border-radius:9999px;letter-spacing:.02em}
-.sch-card h5{color:var(--d);font-weight:800;font-size:.95rem;line-height:1.35;margin-top:.3rem}
+.sch-pn{display:inline-block;background:var(--m);color:var(--d);font-weight:800;font-size:.72rem;padding:.15rem .65rem;border-radius:9999px;border:1px solid var(--c)}
+.sch-card h5{color:var(--deep-green);font-weight:800;font-size:.95rem;line-height:1.35;margin-top:.3rem}
 .sch-meta{font-size:.8rem;font-weight:600;color:#5A3B21;display:flex;flex-wrap:wrap;gap:.2rem .9rem;margin-top:.3rem}.sch-meta i{color:var(--c);margin-right:.25rem}
-/* kartu acara khusus (beda warna + ikon logo) */
-.evt-card{position:relative;overflow:hidden;display:flex;gap:.9rem;padding:1rem;border-radius:18px;color:#fff;background:linear-gradient(135deg,#9d174d,#7c3aed);box-shadow:0 14px 24px -12px rgba(124,58,237,.7);transition:transform .2s}
-.evt-card.b{background:linear-gradient(135deg,#b45309,#be123c);box-shadow:0 14px 24px -12px rgba(190,18,60,.65)}
+/* acara khusus: krim-kuning / hijau lembut + ikon logo */
+.evt-card{--ea:#F3A94B;--eb:#FEF4E6;--em:#FBE3BE;--ek:#EBC48A;--ed:#7A4B12;position:relative;overflow:hidden;display:flex;gap:.9rem;padding:1rem;border-radius:18px;color:var(--earth-brown);background:linear-gradient(135deg,var(--eb),#fff 88%);border:1.5px dashed var(--ek);box-shadow:0 8px 16px -12px rgba(90,59,33,.35);transition:transform .2s}
+.evt-card.b{--ea:#7C9246;--eb:#EBF2DF;--em:#D6E4BB;--ek:#B4CA86;--ed:#2F4A1A}
 .evt-card:hover{transform:translateY(-2px)}
-.evt-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:9999px;background:rgba(255,255,255,.1)}
-.evt-ic{width:3.4rem;height:3.4rem;border-radius:16px;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;color:#FDE68A}
-.evt-badge{display:inline-flex;align-items:center;gap:.3rem;background:#FDE68A;color:#7c2d12;font-weight:900;font-size:.68rem;letter-spacing:.08em;padding:.15rem .6rem;border-radius:9999px;text-transform:uppercase}
-.evt-card h5{font-weight:900;font-size:1.02rem;line-height:1.3;margin:.35rem 0 .15rem;position:relative}
-.evt-card p{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.92);position:relative}
+.evt-card::after{content:"";position:absolute;right:-34px;top:-34px;width:120px;height:120px;border-radius:9999px;background:var(--em);opacity:.55}
+.evt-ic{position:relative;width:3.4rem;height:3.4rem;border-radius:16px;background:#fff;border:2px solid var(--em);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;color:var(--ed);box-shadow:0 3px 0 var(--em)}
+.evt-badge{position:relative;display:inline-flex;align-items:center;gap:.3rem;background:var(--em);color:var(--ed);font-weight:900;font-size:.68rem;letter-spacing:.08em;padding:.15rem .6rem;border-radius:9999px;text-transform:uppercase}
+.evt-badge i{color:var(--ea)}
+.evt-card h5{font-weight:900;font-size:1.02rem;line-height:1.3;margin:.35rem 0 .15rem;position:relative;color:var(--deep-green)}
+.evt-card p{font-size:.82rem;font-weight:500;color:var(--earth-brown);position:relative}
 .evt-meta{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem;position:relative}
-.evt-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:9999px;padding:.15rem .65rem;font-size:.76rem;font-weight:700}
-.evt-pill.pn{background:#fff;color:var(--d);border-color:#fff}
+.evt-pill{background:#fff;border:1px solid var(--em);color:var(--earth-brown);border-radius:9999px;padding:.15rem .65rem;font-size:.76rem;font-weight:700}
+.evt-pill i{color:var(--ea)}
+.evt-pill.pn{background:var(--m);color:var(--d);border-color:var(--c)}
 /* info & penyuluhan */
-.v8-info{display:flex;gap:.9rem;padding:1rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 80%);border:1px solid var(--b);border-left:6px solid var(--c);box-shadow:0 6px 14px -8px rgba(0,0,0,.2);transition:transform .2s}
+.v8-info{display:flex;gap:.9rem;padding:1rem;border-radius:16px;background:linear-gradient(100deg,var(--b),#fff 85%);border:1px solid var(--m);border-left:6px solid var(--c);box-shadow:0 5px 12px -8px rgba(90,59,33,.22);transition:transform .2s}
 .v8-info:hover{transform:translateY(-2px)}
-.v8-info-ic{width:3rem;height:3rem;border-radius:14px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 3px 0 var(--d)}
+.v8-info-ic{width:3rem;height:3rem;border-radius:14px;background:var(--m);color:var(--d);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;border:1px solid var(--c)}
 /* filter & statistik grafik */
 .v8-f{display:flex;flex-direction:column;gap:.3rem;min-width:0}
 .v8-f>span{font-size:.75rem;font-weight:800;color:var(--earth-brown)}
 .v8-f input,.v8-f select{width:100%;padding:.5rem .75rem;background:#fff;color:var(--deep-green);font-weight:700;border:1px solid rgba(124,146,70,.35)}
-.v8-stat{background:linear-gradient(160deg,#fff,var(--soft,#EBF2DF));border:1px solid rgba(124,146,70,.25);border-radius:14px;padding:.6rem .5rem;text-align:center}
+.v8-stat{background:linear-gradient(160deg,#fff,#F3F7EA);border:1px solid rgba(124,146,70,.22);border-radius:14px;padding:.6rem .5rem;text-align:center}
 .v8-stat span{display:block;font-size:.72rem;font-weight:700;color:var(--earth-brown)}.v8-stat b{font-size:1.2rem;font-weight:900;color:var(--deep-green);font-family:Quicksand,sans-serif}
-/* edukasi */
-.v8-edu-hero{padding:1.25rem;color:#fff;background:linear-gradient(120deg,#be185d,#e11d48 50%,#f59e0b);display:grid;gap:1rem}
+/* edukasi: pastel krim-peach-hijau */
+.v8-edu-hero{padding:1.25rem;color:var(--deep-green);background:linear-gradient(120deg,#FEF4E6,#FCEFEA 52%,#EBF2DF);border-bottom:1px solid rgba(124,146,70,.2);display:grid;gap:1rem}
 @media(min-width:1024px){.v8-edu-hero{grid-template-columns:1fr 1.1fr;align-items:center;padding:1.5rem 1.75rem}}
-.v8-tip-today{background:#fff;color:var(--earth-brown);border-radius:18px;padding:.9rem 1rem;box-shadow:0 10px 20px -10px rgba(0,0,0,.4)}
-.edu-card{position:relative;border-radius:20px;background:#fff;border:1px solid var(--b);overflow:hidden;box-shadow:0 8px 18px -10px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
-.edu-card:hover{transform:translateY(-4px);box-shadow:0 16px 26px -12px rgba(0,0,0,.35)}
+.v8-tip-today{background:#fff;color:var(--earth-brown);border:1px solid #F2DDC0;border-radius:18px;padding:.9rem 1rem;box-shadow:0 8px 16px -12px rgba(90,59,33,.35)}
+.edu-card{position:relative;border-radius:20px;background:#fff;border:1px solid var(--m);overflow:hidden;box-shadow:0 6px 14px -10px rgba(90,59,33,.3);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 14px 22px -12px rgba(90,59,33,.32)}
 .edu-top{background:linear-gradient(120deg,var(--b),#fff);padding:1rem 1rem .5rem;display:flex;align-items:center;gap:.75rem}
-.edu-ic{width:3.2rem;height:3.2rem;border-radius:9999px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 0 0 5px var(--b),0 4px 0 var(--d);flex-shrink:0}
+.edu-ic{width:3.2rem;height:3.2rem;border-radius:9999px;background:var(--m);color:var(--d);display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 0 0 5px var(--b),0 0 0 6px var(--m);flex-shrink:0}
 .edu-card h4{font-weight:800;font-size:.98rem;color:var(--deep-green);line-height:1.35;padding:0 1rem}
 .edu-card p{font-size:.86rem;color:var(--earth-brown);font-weight:500;line-height:1.65;padding:.4rem 1rem 0}
 .edu-foot{margin-top:auto;padding:.7rem 1rem;font-size:.78rem;font-weight:800;color:var(--d);display:flex;align-items:center;gap:.4rem}
 .edu-foot i{color:var(--c)}
 /* dokumentasi */
-.doc-card{border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(124,146,70,.25);box-shadow:0 10px 20px -12px rgba(0,0,0,.35);cursor:pointer;text-align:left;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;padding:0;width:100%}
-.doc-card:hover{transform:translateY(-4px);box-shadow:0 18px 28px -14px rgba(0,0,0,.4)}
+.doc-card{border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--m);box-shadow:0 8px 18px -12px rgba(90,59,33,.35);cursor:pointer;text-align:left;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;padding:0;width:100%}
+.doc-card:hover{transform:translateY(-4px);box-shadow:0 16px 26px -14px rgba(90,59,33,.38)}
 .doc-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e7eadc}
 .doc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.doc-card:hover .doc-img img{transform:scale(1.06)}
-.doc-img .v8-chip{position:absolute;left:.7rem;top:.7rem;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
-.doc-zoom{position:absolute;right:.7rem;top:.7rem;width:2.3rem;height:2.3rem;border-radius:9999px;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem}
-.doc-cap{padding:.9rem 1rem 1rem;border-top:4px solid var(--c)}
+.doc-img .v8-chip{position:absolute;left:.7rem;top:.7rem;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.doc-zoom{position:absolute;right:.7rem;top:.7rem;width:2.3rem;height:2.3rem;border-radius:9999px;background:rgba(255,255,255,.9);color:var(--d);display:flex;align-items:center;justify-content:center;font-size:.85rem;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.doc-cap{padding:.9rem 1rem 1rem;border-top:4px solid var(--m);background:linear-gradient(180deg,var(--b),#fff)}
 .doc-cap h4{font-weight:800;color:var(--deep-green);font-size:1rem;line-height:1.35}.doc-cap p{font-size:.85rem;color:var(--earth-brown);font-weight:500;line-height:1.6;margin-top:.25rem}
-/* youtube */
-.v8-yt-card{border-radius:20px;padding:1.25rem 1.35rem;color:#fff;background:linear-gradient(140deg,#b91c1c,#dc2626 55%,#7f1d1d);display:flex;flex-direction:column;justify-content:center;gap:.85rem;box-shadow:0 14px 26px -14px rgba(185,28,28,.8)}
-.v8-yt-logo{width:2.8rem;height:2.8rem;border-radius:14px;background:#fff;color:#dc2626;display:flex;align-items:center;justify-content:center;font-size:1.7rem}
-.v8-yt-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:.7rem 1.1rem;border-radius:9999px;background:#fff;color:#b91c1c;font-weight:900;font-size:.92rem;letter-spacing:.02em;box-shadow:0 4px 0 rgba(0,0,0,.28);transition:transform .15s,box-shadow .15s}
-.v8-yt-btn:hover{transform:translateY(-2px)}.v8-yt-btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.28)}
+/* youtube: blush pastel */
+.v8-yt-card{border-radius:20px;padding:1.25rem 1.35rem;color:#6B2C25;background:linear-gradient(140deg,#FEF3EF,#FBE6E0 60%,#F8DCD5);border:1px solid #F1CDC6;display:flex;flex-direction:column;justify-content:center;gap:.85rem;box-shadow:0 10px 20px -14px rgba(201,74,63,.5)}
+.v8-yt-card h4{color:#7A2E26}.v8-yt-card p{color:#5A3B21}
+.v8-yt-lbl{color:#9A4A40}
+.v8-yt-logo{width:2.8rem;height:2.8rem;border-radius:14px;background:#fff;color:#D9645A;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border:1px solid #F1CDC6}
+.v8-yt-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:.7rem 1.1rem;border-radius:9999px;background:#F6B9B0;color:#6B2C25;border:1.5px solid #E59C92;font-weight:900;font-size:.92rem;letter-spacing:.02em;box-shadow:0 3px 0 #E59C92;transition:transform .15s,box-shadow .15s}
+.v8-yt-btn:hover{transform:translateY(-2px);background:#F2A99F}.v8-yt-btn:active{transform:translateY(3px);box-shadow:0 0 0 #E59C92}
 .v8-yt-btn i.fa-youtube{animation:v8bell 2.4s ease-in-out infinite}
 @keyframes v8bell{0%,70%,100%{transform:none}78%{transform:rotate(-14deg)}86%{transform:rotate(12deg)}94%{transform:rotate(-6deg)}}
 @media(max-width:420px){.sch-card{gap:.6rem;padding:.6rem}.sch-date{min-width:3.6rem}.evt-card{padding:.85rem}.evt-ic{width:2.9rem;height:2.9rem;font-size:1.3rem}}
@@ -549,11 +556,11 @@ body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-ca
 
                 <!-- ===== V8: VISI & MISI (1 BOX) ===== -->
                 <div class="white-card overflow-hidden" id="visi-misi">
-                    <div class="flex items-center gap-3 px-5 sm:px-6 py-4 text-white" style="background:linear-gradient(120deg,#1E4620,#3b6b2a 60%,#7C9246)">
-                        <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-compass text-sun-yellow text-xl"></i></div>
+                    <div class="flex items-center gap-3 px-5 sm:px-6 py-4 text-deep-green border-b border-olive-green/15" style="background:linear-gradient(120deg,#EBF2DF,#F6F4E6 55%,#FEF4E6)">
+                        <div class="w-11 h-11 rounded-xl bg-white border border-olive-green/25 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-compass text-sun-yellow text-xl"></i></div>
                         <div>
                             <h3 class="font-extrabold text-lg md:text-xl leading-tight">Visi &amp; Misi Utama</h3>
-                            <p class="text-xs text-white/85 font-medium">Arah dan komitmen GO-Positif Gonoharjo</p>
+                            <p class="text-xs text-earth-brown font-medium">Arah dan komitmen GO-Positif Gonoharjo</p>
                         </div>
                     </div>
                     <div class="grid md:grid-cols-5">
@@ -613,7 +620,7 @@ body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-ca
                                 <p class="text-xs text-earth-brown font-medium">Informasi layanan dan edukasi kesehatan terbaru</p>
                             </div>
                         </div>
-                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-red-100 text-red-700 border border-red-200 flex-shrink-0"><i class="fa-solid fa-circle-exclamation mr-1"></i>Penting</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-soft-yellow text-earth-brown border border-sun-yellow/50 flex-shrink-0"><i class="fa-solid fa-circle-exclamation mr-1 text-sun-yellow"></i>Penting</span>
                     </div>
                     <div class="grid md:grid-cols-2 gap-4">
                         <article class="v8-info tone-pink">
@@ -686,21 +693,21 @@ body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-ca
                 <div class="white-card overflow-hidden" id="edukasi-tips">
                     <div class="v8-edu-hero">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hand-holding-heart text-2xl text-white"></i></div>
+                            <div class="w-12 h-12 rounded-2xl bg-white border border-sun-yellow/40 shadow-sm flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-hand-holding-heart text-2xl text-sun-yellow"></i></div>
                             <div>
                                 <h3 class="font-extrabold text-lg sm:text-xl md:text-2xl leading-tight">Edukasi &amp; Tips Penuh Kasih Sayang</h3>
-                                <p class="text-xs sm:text-sm text-white/90 font-medium">Pesan sederhana, dari hati, untuk setiap keluarga Gonoharjo 💛</p>
+                                <p class="text-xs sm:text-sm text-earth-brown font-medium">Pesan sederhana, dari hati, untuk setiap keluarga Gonoharjo 💛</p>
                             </div>
                         </div>
                         <div class="v8-tip-today">
                             <div class="flex items-center justify-between gap-2 mb-2">
-                                <span class="text-[11px] font-extrabold tracking-wider uppercase text-rose-700"><i class="fa-solid fa-heart mr-1"></i>Tip Hari Ini</span>
-                                <button type="button" onclick="nextTip()" class="px-3 py-1.5 rounded-full text-xs font-bold bg-rose-600 text-white hover:bg-rose-700 flex items-center gap-1.5"><i class="fa-solid fa-shuffle"></i>Tip Berikutnya</button>
+                                <span class="text-[11px] font-extrabold tracking-wider uppercase text-earth-brown"><i class="fa-solid fa-heart mr-1 text-rose-300"></i>Tip Hari Ini</span>
+                                <button type="button" onclick="nextTip()" class="px-3 py-1.5 rounded-full text-xs font-bold bg-soft-green text-deep-green border border-olive-green/40 hover:bg-white flex items-center gap-1.5"><i class="fa-solid fa-shuffle"></i>Tip Berikutnya</button>
                             </div>
                             <div id="tip-today" class="flex items-start gap-3"></div>
                         </div>
                     </div>
-                    <div id="edu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 p-5 sm:p-6"></div>
+                    <div id="edu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 p-5 sm:p-6 bg-base-cream/50"></div>
                 </div>
 
                 <!-- ===== V8: DOKUMENTASI KEBERSAMAAN LAPANGAN ===== -->
@@ -718,7 +725,7 @@ body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-ca
                 <!-- ===== V8: MEDIA EDUKASI YOUTUBE ===== -->
                 <div class="white-card p-5 sm:p-6 space-y-5" id="media-youtube">
                     <div class="flex items-center gap-3 border-b border-olive-green/10 pb-3.5">
-                        <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-red-100 text-red-600 flex-shrink-0"><i class="fa-brands fa-youtube text-xl"></i></div>
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center bg-[#FCEBE8] text-[#C94A3F] flex-shrink-0"><i class="fa-brands fa-youtube text-xl"></i></div>
                         <div>
                             <h3 class="font-extrabold text-deep-green text-base sm:text-lg md:text-xl leading-tight">Media Edukasi YouTube</h3>
                             <p class="text-xs text-earth-brown font-medium">Klik untuk memutar tayangan ramah keluarga</p>
@@ -729,19 +736,19 @@ body.mode-lansia .sch-meta,body.mode-lansia .evt-card p,body.mode-lansia .edu-ca
                             <div id="youtube-facade" class="relative rounded-2xl overflow-hidden bg-stone-900 aspect-video flex items-center justify-center group cursor-pointer shadow-lg" onclick="loadYoutubeVideo()">
                                 <img src="https://img.youtube.com/vi/FSqc9qFuqVM/hqdefault.jpg" alt="Pratinjau video YouTube Posyandu Desa Gonoharjo" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300" onerror="this.src='https://placehold.co/600x350/1E4620/ffffff?text=Video+GO-Positif+Gonoharjo'">
                                 <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition"></div>
-                                <button type="button" aria-label="Putar video" class="relative z-10 w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition border-2 border-white/80 shadow-lg"><i class="fa-solid fa-play text-2xl ml-1"></i></button>
+                                <button type="button" aria-label="Putar video" class="relative z-10 w-16 h-16 bg-[#D9645A] text-white rounded-full flex items-center justify-center group-hover:scale-110 transition border-2 border-white/80 shadow-lg"><i class="fa-solid fa-play text-2xl ml-1"></i></button>
                                 <span class="absolute bottom-3 left-3 bg-deep-green/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur">▶ GO-POSITIF DESA GONOHARJO</span>
                             </div>
                         </div>
                         <div class="lg:col-span-5 v8-yt-card">
                             <div class="flex items-center gap-3">
                                 <span class="v8-yt-logo"><i class="fa-brands fa-youtube"></i></span>
-                                <span class="text-[11px] font-extrabold tracking-widest uppercase text-white/90">Kanal Resmi</span>
+                                <span class="text-[11px] font-extrabold tracking-widest uppercase v8-yt-lbl">Kanal Resmi</span>
                             </div>
                             <h4 class="font-black text-xl sm:text-2xl leading-tight">SUBSCRIBE<br>YT POSYANDU DESA GONOHARJO</h4>
-                            <p class="text-sm text-white/90 font-medium leading-relaxed">Dapatkan video edukasi kesehatan keluarga, kegiatan Posyandu, dan tips hidup sehat terbaru. Jangan lupa tekan lonceng 🔔</p>
+                            <p class="text-sm font-medium leading-relaxed">Dapatkan video edukasi kesehatan keluarga, kegiatan Posyandu, dan tips hidup sehat terbaru. Jangan lupa tekan lonceng 🔔</p>
                             <a href="https://youtube.com/@posyandudesagonoharjo?si=jnOAf1kJcyfHYz1g" target="_blank" rel="noopener noreferrer" class="v8-yt-btn"><i class="fa-brands fa-youtube text-lg"></i><span>SUBSCRIBE SEKARANG</span><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-                            <p class="text-[11px] text-white/80 font-semibold break-all">youtube.com/@posyandudesagonoharjo</p>
+                            <p class="text-[11px] font-semibold break-all v8-yt-lbl">youtube.com/@posyandudesagonoharjo</p>
                         </div>
                     </div>
                 </div>
@@ -2293,7 +2300,7 @@ window.POSYANDU=[
  {id:'balai',nama:'Posyandu Balai Desa',tone:'sky'},
  {id:'posko',nama:'Posyandu Posko RT 05',tone:'amber'}
 ];
-window.V8_TONE={green:'#2E7D32',sky:'#0284C7',amber:'#D97706',pink:'#DB2777',violet:'#7C3AED',rose:'#E11D48'};
+window.V8_TONE={green:'#6B8A3A',sky:'#3F86A8',amber:'#C9812A',pink:'#C0607F',violet:'#8573BD',rose:'#CF7068'};
 const PZ=Object.fromEntries(POSYANDU.map(p=>[p.id,p]));
 
 /* 2) JADWAL RUTIN */
@@ -2329,7 +2336,7 @@ $('jadwal-rutin').innerHTML=JADWAL.map(j=>{const p=PZ[j.p];return `<article clas
  <div class="sch-date"><b>${j.hari}</b><small>${j.bln}</small></div>
  <div class="min-w-0"><span class="sch-pn">${esc(p.nama)}</span>
  <h5>${esc(j.judul)}</h5>
- <p class="text-xs font-semibold" style="color:var(--c)">${esc(j.sub)}</p>
+ <p class="text-xs font-semibold" style="color:var(--d)">${esc(j.sub)}</p>
  <div class="sch-meta"><span><i class="fa-regular fa-clock"></i>${esc(j.jam)}</span><span><i class="fa-solid fa-location-dot"></i>${esc(j.tempat)}</span></div></div></article>`}).join('');
 $('jadwal-acara').innerHTML=ACARA.map(a=>{const p=PZ[a.p];return `<article class="evt-card ${a.v==='b'?'b':''} tone-${p.tone}">
  <div class="evt-ic"><i class="fa-solid ${a.icon}"></i></div>
